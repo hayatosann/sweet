@@ -16,9 +16,9 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->integer('prefecture_id');
+            $table->unsignedBigInteger('prefecture_id');
             $table->foreign('prefecture_id')->references('id')->on('prefectures');
             $table->string('address');
             $table->string('phone_number');
@@ -28,8 +28,8 @@ class CreateStoresTable extends Migration
             $table->string('store_image');
             $table->string('recommend_product');
             $table->string('recommend_image');
-            $table->decimal('latitude');
-            $table->decimal('longitude');
+            $table->decimal('latitude, 12, 9');
+            $table->decimal('longitude,12, 9');
             $table->string('url');
             $table->timestamps();
         });

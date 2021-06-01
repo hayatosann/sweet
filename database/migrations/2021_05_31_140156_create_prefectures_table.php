@@ -15,7 +15,7 @@ class CreatePrefecturesTable extends Migration
     {
         Schema::create('prefectures', function (Blueprint $table) {
             $table->id();
-            $table->integer('area_id');
+            $table->integer('area_id')->comment('1.北海道・東北、2.関東、3.中部、4.関西、5.四国・中国、6.九州・沖縄');
             $table->string('name');
             $table->timestamps();
         });
