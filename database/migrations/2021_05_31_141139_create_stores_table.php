@@ -28,8 +28,8 @@ class CreateStoresTable extends Migration
             $table->string('store_image');
             $table->string('recommend_product');
             $table->string('recommend_image');
-            $table->decimal('latitude, 12, 9');
-            $table->decimal('longitude,12, 9');
+            $table->decimal('latitude', 12, 9);
+            $table->decimal('longitude', 12, 9);
             $table->string('url');
             $table->timestamps();
         });
