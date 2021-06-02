@@ -16,10 +16,6 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedBigInteger('prefecture_id');
-            $table->foreign('prefecture_id')->references('id')->on('prefectures');
             $table->string('address');
             $table->string('phone_number');
             $table->string('opening_hour');
