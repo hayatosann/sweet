@@ -24,7 +24,7 @@ class CreateReviewsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->integer('review');
             $table->string('post_image');
-            $table->timestamps('published_at');
+            $table->dateTime('published_at');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
