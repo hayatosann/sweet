@@ -17,7 +17,7 @@
                 <h1>検索結果</h1>
             </div>
             <div class="search">
-                <a href="">条件をリセット</a>
+                <a href="">検索条件をリセット</a>
             </div>
             <div class="choice">
                 <p>指定条件を入れるコードを入れる</p>
