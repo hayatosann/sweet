@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    font-family: "Hiragino Kaku Gothic ProN";
+
+}
+
+.font{
+    font-family: "Hiragino Kaku Gothic ProN";
+    color: #707070;
+
+}
+
+.container{
+    box-sizing: border-box;
+    width: calc(100% - 240px);
+}
+
+.all_clear{
+    
+    border: 1px solid;
+    background-color: transparent;
+    color: #505050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 270px;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.rogo{
+    width: 61px;
+    height: 61px;
+
+}
+
+.word{
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+}
