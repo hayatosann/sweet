@@ -31,17 +31,17 @@
                 <div class="word font">
                     <p>お気に入りに追加</p>
                 </div>
-                <a href=""><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星"></a>
-                <a href=""><img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆"></a>
+                <a href=""><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></a>
+                <a href=""><img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
                 <div class="word font">
                     <p>口コミを投稿する</p>
                 </div>
             </div>
             <div class="info font">
-                {{-- <p>{{$detail->name}}</p>
-                <p>{{$detail->address}}</p>
-                <p>{{$detail->category_id}}</p>
-                <p>{{$detail->price}}</p> --}}
+                <p>（店舗名引っ張る）</p>
+                <p>（住所引っ張る）</p>
+                <p>（カテゴリ引っ張る）</p>
+                <p>（価格引っ張る）</p>
                 <p>（評価のポイント平均引っ張る）</p>
                 <button><a href="">詳細</a></button>
             </div>

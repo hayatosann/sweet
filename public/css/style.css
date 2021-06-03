@@ -31,3 +31,15 @@
     text-align: center;
     cursor: pointer;
 }
+
+.rogo{
+    width: 61px;
+    height: 61px;
+
+}
+
+.word{
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+}
