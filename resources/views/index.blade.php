@@ -16,25 +16,25 @@
             <div class="title">
                 <h1>検索結果</h1>
             </div>
-            <div class="sarch">
-                <p>検索条件をリセット</p>
+            <div class="search">
+                <a href="">条件をリセット</a>
             </div>
             <div class="choice">
-                <p>指定条件</p>
+                <p>指定条件を入れるコードを入れる</p>
             </div>
         </div>
         <div class="review">
             <div class="storephoto">
-                <img src="" alt="店舗写真">
+                <a href=""><img src="" alt="店舗写真"></a>
             </div>
             <div class="add">
-                <div class="ward">
-                    <p>お気に入り追加</p>
+                <div class="word">
+                    <p>お気に入りに追加</p>
                 </div>
                 <a href=""><img src="" alt="お気に入り星"></a>
                 <a href=""><img src="" alt="口コミ鉛筆"></a>
-                <div class="ward">
-                    <p>口コミ投稿する</p>
+                <div class="word">
+                    <p>口コミを投稿する</p>
                 </div>
             </div>
             <div class="info">
