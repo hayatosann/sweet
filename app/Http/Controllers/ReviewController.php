@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Review;
+use App\Store;
 use Auth;
 
 class ReviewController extends Controller
@@ -83,4 +84,14 @@ class ReviewController extends Controller
     {
         //
     }
+
+    public function myreview()
+    {
+        // ログインユーザーの投稿
+        $reviews = Auth::user()->reviews;
+        $userdata = Auth::user();
+
+        return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
+    }
+    
 }

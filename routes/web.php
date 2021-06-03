@@ -22,3 +22,31 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// マイページのRoute
+Route::get('/mypages', 'ReviewController@myreview')->name('mypage');
