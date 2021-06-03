@@ -1,0 +1,126 @@
+/* 全体 */
+body {
+    color: #707070;
+    width: 1920px;
+}
+a {
+    text-decoration:none;
+}
+/* 上メニュー */
+.shop-review-data{
+    width: 70%;
+    margin-left: 550px;
+}
+.average {
+    display: flex;
+}
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.8;
+}
+dl dt {
+    width: 8%;
+}
+dl dd {
+    width: 92%;
+}
+
+/* 下メニュー */
+.bottom-menu {
+    display: flex;
+}
+.rate {
+    display: flex;
+    margin-left: 820px;
+}
+/* おすすめ近隣店舗 */
+.recommend-shops {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    text-align: center;
+    width: 30%;
+}
+
+.shop-detail-link {
+    margin-bottom: 10px;
+}
+.detail {
+    width: 73px;
+    height: 45px;
+    border-radius: 22.5px;
+    background: #e3c1bc;
+    border: 1px solid #707070;
+    margin-left: 150px;
+}
+img {
+    width: 200px;
+    height: 130px;
+    background-color: #707070 ;
+    opacity: 0.5;
+    margin: 0 10px 0px 20px;
+}
+.form-group {
+    width: 675px;
+    margin: 5px 0;
+}
+.row {
+    width: 50%;
+}
+.review-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.star {
+    display: flex;
+    flex-direction: row;
+}
+.star > p {
+    width: 150px;
+}
+label > input{
+    display: none;
+}
+.space{
+    float:left;
+    width: 150px;
+}
+/* 写真追加 */
+input  #file-upload-button {
+    background-color: red;
+}
+/* アクションボタンたち */
+.low {
+    width: 100%;
+    display: flex;
+    margin-left: 300px;
+    margin-top: 90px;
+}
+button {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background: #f0dad8;
+    border: 1px solid #707070;
+}
+.spacer {
+    width: 100%;
+}
+.btn {
+    background-color: #f0dadb;
+}
+.post {
+    background-color: #e0b687;
+}
+.action-button {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 300px;
+
+}
+.middle {
+    display: flex;
+}
