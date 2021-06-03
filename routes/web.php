@@ -17,5 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/sweets', 'SweetController@index')->name('sweets.index');
