@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
 Route::delete('/reviews/{review}/','PostController@destroy')->name('revies.destroy');
+
+Route::get('/sweets', 'StoreController@index')->name('sweets.index');
+
