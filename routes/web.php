@@ -24,4 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::delete('/reviews/{review}/','PostController@destroy')->name('revies.destroy');
+Route::delete('/reviews/{review}/','ReviewController@destroy')->name('revies.destroy');
