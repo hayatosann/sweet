@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Review;
+use App\Store;
+use Auth;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -13,7 +16,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $stores = Store::all();
+        $comments = Review::find(1)->reveiws()->where('comment')->first();
+        return view('index',['stores'=>$stores],['comment'=>$comments]);
     }
 
     /**
