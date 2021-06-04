@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
 
 use Auth;
 
@@ -81,6 +82,11 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        if(Auth::id()!== $review->user_id){
+            return abort(404);
+        }
+        $review -> delete();
+        return redirect()->route('reviews.index');
     }
 }
