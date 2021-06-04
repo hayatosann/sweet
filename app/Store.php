@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    function review()
+    function reviews()
     {
         return $this->hasMany('App\Review');
     }
 
-    function favorite()
+    function favorites()
     {
         return $this->hasMany('App\Favorites');
     }
 
-    function category()
+    function categories()
     {
         return $this->belongsTo('App\Category');
     }
 
-    function prefecture()
+    function prefectures()
     {
         return $this->belongsTo('App\Prefectue');
     }

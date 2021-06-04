@@ -37,12 +37,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function review()
+    function reviews()
     {
         return $this->hasMany('App\Review');
     }
 
-    function favorite()
+    function favorites()
     {
         return $this->hasMany('App\Favorite');
     }

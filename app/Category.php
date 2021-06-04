@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    function store()
+    function stores()
     {
         return $this->hasMany('App\Store');
     }
 
-    function review()
+    function reviews()
     {
         return $this->hasMany('App\Review');
     }
