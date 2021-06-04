@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
-    function stores()
+    function store()
     {
         return $this->belongsTo('App\Store');
     }
 
-    function users()
+    function user()
     {
         return $this->belongsTo('App\User');
     }

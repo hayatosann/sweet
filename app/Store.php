@@ -13,15 +13,15 @@ class Store extends Model
 
     function favorites()
     {
-        return $this->hasMany('App\Favorites');
+        return $this->hasMany('App\Favorite');
     }
 
-    function categories()
+    function category()
     {
         return $this->belongsTo('App\Category');
     }
 
-    function prefectures()
+    function prefecture()
     {
         return $this->belongsTo('App\Prefectue');
     }

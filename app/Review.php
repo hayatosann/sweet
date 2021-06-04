@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    function stores()
+    function store()
     {
         return $this->belongsTo('App\Store');
     }
     
-    function users()
+    function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    function categories()
+    function category()
     {
-        return $this->belongsTo('App\Categories');
+        return $this->belongsTo('App\Category');
     }
 }
