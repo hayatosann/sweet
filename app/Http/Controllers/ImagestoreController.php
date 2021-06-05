@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Store;
-use Auth;
 
-class StoreController extends Controller
+class ImagestoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,28 +32,18 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //  画像パスをDBに保存
     public function store(Request $request)
     {
-        $store = New Store;
-        $store -> name = $request -> name;
-        $store -> category_id = $request -> category_id;
-        $store -> prefecture_id = $request -> prefecture_id;
-        $store -> address = $request -> address;
-        $store -> phone_number = $request -> phone_number;
-        $store -> opening_hour = $request -> opening_hour;
-        $store -> closing_day = $request -> closing_day;
-        $store -> price = $request -> price;
-        $store -> store_image = $request -> store_image;
-        $store -> recommend_image = $request -> recommend_image;
-        $store -> recommend_product = $request -> recommend_product;
-        $store -> latitude = $request -> latitude;
-        $store -> longitude = $request -> longitude;
-        $store -> url = $request -> url;
-        $store -> user_id = Auth::id();
+    
+        $imgPath = $this->saveImage($request->file('eimg'));
+        $imagestore = new Imagestore();
+        $imagestore->recommend_image = $imgPath;
+        $imagestore->store_image = $imgPath;
 
-        $store -> save;
-        return redirect()->route('/sweets/stores.show');
-
+        $imagestore->save();
+        return redirect()->route('/sweets.index');
     }
 
     /**
@@ -66,8 +54,7 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        $store = Store::find($id);
-        return view ('/sweets', ['store'=>$store]);
+        //
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/sweets','StoreController@store')->name('sweets.store');
+Route::post('/sweets/{sweet}','ReviewController@show')->name('sweets.show');
+
+//Image保存
+Route::post('/sweets', 'ImagestoreController@store')->name('sweets.store');
