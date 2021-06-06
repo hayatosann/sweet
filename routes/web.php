@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\ReviewController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +22,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/sweets','StoreController@store')->name('sweets.store');
-Route::post('/sweets/{sweet}','ReviewController@show')->name('sweets.show');
+Route::get('/sweets','StoreController@store')->name('sweets.store');
+Route::get('/sweets/{sweet}','ReviewController@show')->name('sweets.show');
 
-//Image保存
-Route::post('/sweets', 'ImagestoreController@store')->name('sweets.store');
+//Image保存(画像系はあとで修正します)
+// Route::get('/image_input','ImagestoreController@getImageInput');
+// Route::post('/image_confirm','ImagestoreController@postImageConfirm');
+// Route::post('/image_complete','ImagestoreController@postImageComplete');
