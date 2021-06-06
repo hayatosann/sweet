@@ -25,7 +25,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('sweets.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class ReviewController extends Controller
         //
     }
 
-    
+
 
 
 }

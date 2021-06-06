@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    function stores()
+    function store()
     {
         return $this -> belongsTo('App\Store');
     }
     
 }
+　
