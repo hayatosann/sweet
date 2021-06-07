@@ -41,8 +41,8 @@ Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
 
-
-
+Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
+// Route::delete('/favorites/{favorite}/destroy', 'FavoriteController@destroy')->name('favorites.destroy');
 
 
 

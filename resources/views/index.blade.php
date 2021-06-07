@@ -31,8 +31,13 @@
                 <div class="word font">
                     <p>お気に入りに追加</p>
                 </div>
-                <a href=""><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></a>
-                <a href=""><img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
+                <form action="{{ route('favorites.store') }}" method="POST">
+                    <!-- お気に入りを押してstoreとuserのidをDBに送る -->
+                        <input type="hidden" name="store_id" value="<?php echo $detail['store_id']; ?>">
+                        <input type="hidden" name="user_id" value="<?php echo $detail['user_id']; ?>">                
+                        <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></button>
+                </form>
+            <a href=""><img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
                 <div class="word font">
                     <p>口コミを投稿する</p>
                 </div>
