@@ -49,4 +49,4 @@ Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
 // マイページのRoute
-Route::get('/mypages', 'ReviewController@myreview')->name('mypage');
+Route::get('/mypages', 'ReviewController@myreview')->name('reviews.myreview');
