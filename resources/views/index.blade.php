@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        {{-- @foreach ($Stores as $detail) --}}
+        @foreach ($stores as $detail)
         <div class="review">
             <div class="storephoto">
                 <a href=""><img src="" alt="店舗写真"></a>
@@ -38,18 +38,20 @@
                 </div>
             </div>
             <div class="info font">
-                <p>（店舗名引っ張る）</p>
-                <p>（住所引っ張る）</p>
-                <p>（カテゴリ引っ張る）</p>
-                <p>（価格引っ張る）</p>
-                <p>（評価のポイント平均引っ張る）</p>
+                <p>{{ $detail->name }}（店舗名引っ張る）</p>
+                <p>{{ $detail->address }}（住所引っ張る）</p>
+                <p>{{ $detail->category->name }}（カテゴリ引っ張る）</p>
+                <p>{{ $detail->price }}（価格引っ張る）</p>
+                <p>{{ $detail->reviews->review }}（評価のポイント平均引っ張る）</p> 
+                {{-- ↑ここの情報の引っ張り方は村田さんに確認する --}}
                 <button><a href="">詳細</a></button>
             </div>
             <div class="comment font">
-                <p>（ユーザーネーム引っ張る）さんの口コミ</p>
-                <p>投稿日時：（create時間引っ張る）</p>
-                <p>（評価引っ張る）</p>
-                <p>（コメント引っ張る）</p>
+                <p>{{ $detail->user->id }}（ユーザーネーム引っ張る）さんの口コミ</p>
+                <p>投稿日時：{{ $detail->created_at }}（create時間引っ張る）</p>
+                <p>{{ $detail->reviews->review }}（評価引っ張る）</p>
+                {{-- ↑ここの情報の引っ張り方は村田さんに確認する --}}
+                <p>{{ $detail->reviews->comment }}（コメント引っ張る）</p>
                 <button><a href="">続きを見る・・・</a></button>
             </div>
         </div>

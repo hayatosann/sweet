@@ -1,3 +1,157 @@
+/* 全体 */
+body {
+    color: #707070;
+    width: 1920px;
+    height: 1080px;
+}
+a {
+    text-decoration:none;
+}
+.sub-title {
+    width: 150px;
+    text-align: center;
+    margin-left: 20px;
+}
+.upper {
+    margin-left: -20px;
+}
+.upper2 {
+    margin-left: -40px;
+}
+.spacer {
+    width: 100%;
+}
+/* 上メニュー */
+.go_back {
+    margin-left: 20px;
+}
+.shop {
+    display: flex;
+    margin-top: 20px;
+}
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.8;
+}
+dl dt {
+    width: 25%;
+}
+dl dd {
+    width: 75%;
+}
+.data_a {
+    margin-left: 20px;
+}
+.shop-data {
+    width: 40%;
+}
+.average {
+    display: flex;
+}
+/* 店舗写真 */
+.shop-photos {
+    display: flex;
+    text-align: center;
+}
+.map {
+    width: 294px;
+    height: 220px;
+}
+
+/* 下メニュー */
+.bottom-menu {
+    display: flex;
+}
+
+/* 左下共通 */
+/* おすすめ近隣店舗 */
+.recommends {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.detail-link {
+    margin-bottom: 10px;
+}
+.detail {
+    width: 73px;
+    height: 45px;
+    border-radius: 22.5px;
+    background: #e3c1bc;
+    border: 1px solid #707070;
+    margin-left: 150px;
+}
+img {
+    width: 200px;
+    height: 130px;
+    background-color: #707070 ;
+    opacity: 0.5;
+    margin: 0 10px 0px 20px;
+}
+/*口コミ編集フォーム */
+input {
+    border-radius: 5px;
+}
+select {
+    font-size: 20px;
+}
+.form-group {
+    width: 620px;
+    margin: 5px 0;
+}
+.review-form {
+    display: flex;
+    justify-content: center;
+}
+.rate {
+    display: flex;
+    margin-left: 720px;
+}
+.star {
+    display: flex;
+    flex-direction: row;
+}
+.star > p {
+    width: 150px;
+}
+.space{
+    float:left;
+    width: 150px;
+}
+/* 写真追加 */
+.picture {
+    display: flex;
+}
+/* アクションボタンたち */
+.buttons {
+    margin-left: 500px;
+    width: 100%;
+}
+.action-button {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+button {
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background: #f0dad8;
+    border: 1px solid #707070;
+}
+.spacer {
+    width: 100%;
+}
+.btn {
+    background-color: #f0dadb;
+}
+.post {
+    background-color: #e0b687;
+}
 *{
     margin: 0;
     padding: 0;
