@@ -17,8 +17,7 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
-        $comments = Review::find(1)->reveiws()->where('comment')->first();
-        return view('index',['stores'=>$stores],['comment'=>$comments]);
+        return view('index',['stores'=>$stores]);
     }
 
     /**

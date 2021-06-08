@@ -170,6 +170,8 @@ button {
 .container{
     box-sizing: border-box;
     width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
 }
 
 .all_clear{
@@ -196,4 +198,63 @@ button {
     font-size: 15px;
     text-align: left;
     color: #707070;
+}
+
+.container{
+    display: flex;
+}
+
+.subject{
+    display: flex;
+
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    }
+
+.content {
+    display: flex;
+    margin: 30px;
+}
+
+.storephoto {
+    width: 263px;
+    height: 176px;
+
+}
+
+.add {
+    display: grid;
+    width: 180px;
+    text-align: revert;
+}
+
+.info {
+    width: 410px;
+    height: 176px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px 20px;
+}
+
+.usercoment{
+    width: 410px;
+height: 176px;
+font-size: 20px;
+text-align: left;
+}
+
+.userinfo {
+    display: -webkit-box;
+}
+
+.add_time{
+    margin: 0px 20px;
+}
+
+.button {
+    text-align: end;
 }

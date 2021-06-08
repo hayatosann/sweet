@@ -25,4 +25,12 @@ class Store extends Model
     {
         return $this->belongsTo('App\Prefectue');
     }
+
+    function bestreview()
+    {
+        return $this->hasMany('App\Review')
+        ->orderBy('reviews', 'desc')
+        ->orderBy('created_at', 'desc')
+        ->get();
+    }
 }
