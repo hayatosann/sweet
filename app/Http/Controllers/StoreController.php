@@ -36,26 +36,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $store = New Store;
-        $store -> name = $request -> name;
-        $store -> category_id = $request -> category_id;
-        $store -> prefecture_id = $request -> prefecture_id;
-        $store -> address = $request -> address;
-        $store -> phone_number = $request -> phone_number;
-        $store -> opening_hour = $request -> opening_hour;
-        $store -> closing_day = $request -> closing_day;
-        $store -> price = $request -> price;
-        $store -> store_image = $request -> store_image;
-        $store -> recommend_image = $request -> recommend_image;
-        $store -> recommend_product = $request -> recommend_product;
-        $store -> latitude = $request -> latitude;
-        $store -> longitude = $request -> longitude;
-        $store -> url = $request -> url;
-        $store -> user_id = Auth::id();
-
-        $store -> save;
-        return redirect()->route('/sweets/stores.show');
-
+        //お店情報入力画面がないので不要。
     }
 
     /**
@@ -67,7 +48,9 @@ class StoreController extends Controller
     public function show($id)
     {
         $store = Store::find($id);
-        return view ('/sweets', ['store'=>$store]);
+        
+        return view ('stores.show', ['store'=>$store]);
+
     }
 
     /**

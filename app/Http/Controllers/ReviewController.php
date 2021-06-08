@@ -25,7 +25,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('sweets.create');
+        return view('reviews.create');
     }
 
     /**
@@ -36,7 +36,27 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = new Review;
+
+        $review -> id;
+        $review -> store_id = $request -> store_id;
+        $review -> comment = $request -> comment;
+        $review -> created_at = $request -> created_at;
+        $review -> user_id = Auth::id();
+        $review -> review = $request -> review;
+        $review -> charge = $request -> charge;
+        $review -> ate_thing = $request -> ate_thing;
+        $review -> category_id = $request -> category_id;
+        $review -> post_image = $request -> post_image;
+        $review -> published_at = $request -> published_at;
+        $review -> updated_at = $request -> updated_at;
+
+        $review -> save();
+        
+        $review = Review::All($id);
+
+        return redirect()->route('stores.show');
+
     }
 
     /**
@@ -47,7 +67,10 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+        $review = Review::find($id);
+    
+        return view('stores.show', ['review'=>$review]);
+
     }
 
     /**

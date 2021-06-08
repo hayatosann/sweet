@@ -22,10 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/sweets','StoreController@store')->name('sweets.store');
-Route::get('/sweets/{sweet}','ReviewController@show')->name('sweets.show');
+Route::post('/stores','StoreController@store')->name('stores.store');
 
-//Image保存(画像系はあとで修正します)
-// Route::get('/image_input','ImagestoreController@getImageInput');
-// Route::post('/image_confirm','ImagestoreController@postImageConfirm');
-// Route::post('/image_complete','ImagestoreController@postImageComplete');
+Route::get('/reviews/create','ReviewController@create')->name('reviews.create');
+Route::get('/reviews/{review}','ReviewController@show')->name('reviews.show');
