@@ -33,7 +33,6 @@
                 </div>
                 <form action="{{ route('favorites.store') }}" method="POST">
                     @csrf
-                    <!-- お気に入りを押してstoreとuserのidをDBに送る -->
                         <input type="hidden" name="store_id" value="{{ $detail->id }}">             
                         <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></button>
                 </form>
