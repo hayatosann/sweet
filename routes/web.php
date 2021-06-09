@@ -21,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/stores', 'StoreController@index')->name('stoers.show');
+Route::get('/stores', 'StoreController@index')->name('stoers.index');
 
-Route::get('/stores/{store}', 'StoreController@show')->name('stoers.show');
+Route::get('/stores/{store}', 'StoreController@show')->name('stores.show');
