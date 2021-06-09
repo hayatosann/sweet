@@ -25,9 +25,9 @@ main {
   display: flex;
   padding: 10px;
   margin-bottom: 20px;
-  border: rgb(148, 148, 148) solid 1px;
-  background-color:  #f0dadb;
-  /* background-color: #f3eaea; */
+  border: rgb(148, 148, 148) 1px;
+  /* background-color:  #f0dadb; */
+  background-color: #f3eaea;
 }
 .card-1{
   width: 200px;
