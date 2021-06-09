@@ -29,8 +29,9 @@ class Store extends Model
     function bestreview()
     {
         return $this->hasMany('App\Review')
-        ->orderBy('reviews', 'desc')
+        ->orderBy('review', 'desc')
         ->orderBy('created_at', 'desc')
-        ->get();
+        ->first();
+
     }
 }

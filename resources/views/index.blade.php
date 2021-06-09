@@ -54,17 +54,15 @@
             </div> 
             <div class="usercoment font">
                 <div class="userinfo">
-                <p>{{ $detail->user }}（ユーザー）さんの口コミ</p>
-                <p class="add_time">投稿日時：{{ $detail->created_at }}</p>
+                <p>{{ $detail->bestreview()['name'] }}（ユーザー）さんの口コミ</p>
+                <p class="add_time">投稿日時：{{ $detail->bestreview()['created_at'] }}</p>
                 </div>
                 <div v-for="star in [5,4,3,2,1]">
                     <input v-model="reviewParams.stars" type="radio" :value="star">
                     <v-star :value="star"></v-star>
                 </div>
-                <p>（評価引っ張る）</p>
-                {{-- ↑村田さんに確認依頼 --}}
-                <p>{{ $detail->bestreveiw}}（コメント引っ張る）</p>
-                {{-- ↑村田さんに確認依頼 --}}
+                <p><p>{{ $detail->bestreview()['review'] }}</p>（評価引っ張る）</p>
+                <p><p>{{ $detail->bestreview()['comment'] }}</p>(コメント引っ張る）</p>
                 <div class="button">
                 <button><a href="">続きを見る・・・（どう飛ぶ？）</a></button>
                 </div>
