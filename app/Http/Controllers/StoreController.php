@@ -49,7 +49,7 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('');
     }
 
     /**

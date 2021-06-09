@@ -136,6 +136,8 @@ select {
     flex-wrap: wrap;
     width: 100%;
 }
+
+
 button {
     width: 200px;
     height: 30px;
@@ -152,6 +154,8 @@ button {
 .post {
     background-color: #e0b687;
 }
+
+
 *{
     margin: 0;
     padding: 0;
@@ -198,6 +202,7 @@ button {
     font-size: 15px;
     text-align: left;
     color: #707070;
+    text-align: center;
 }
 
 .container{
@@ -229,7 +234,7 @@ button {
 .add {
     display: grid;
     width: 180px;
-    text-align: revert;
+    text-align: center;
 }
 
 .info {
