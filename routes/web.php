@@ -22,11 +22,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
-
-// views > reviewsフォルダ内確認用Route
-Route::get('/shop_detail', function () {
-    return view('reviews/show');
-});
-Route::get('/review_create', function () {
-    return view('reviews/create');
-});
