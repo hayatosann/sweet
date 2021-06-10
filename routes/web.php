@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
+Route::delete('/reviews/{review}/','ReviewController@destroy')->name('reviews.destroy');
 
 
 
