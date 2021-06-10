@@ -38,9 +38,8 @@ Route::delete('/reviews/{review}/','ReviewController@destroy')->name('reviews.de
 
 
 
-
-
-
+// 検索機能（ビューの検索フォームのactionに入れるルート）
+Route::get('/stores', 'StoreController@search')->name('stores.search');
 
 Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
 // Route::delete('/favorites/{favorite}/destroy', 'FavoriteController@destroy')->name('favorites.destroy');
