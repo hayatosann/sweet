@@ -25,4 +25,19 @@ class Store extends Model
     {
         return $this->belongsTo('App\Prefectue');
     }
+<<<<<<< Updated upstream
+=======
+
+    function bestreview()
+    {
+        // $today  = Carbon::today(); 
+        return $this->hasMany('App\Review')
+        ->where('published_at', '<', now())
+        ->orderBy('review', 'desc')
+        ->orderBy('created_at', 'desc')
+        ->first();
+
+
+    }
+>>>>>>> Stashed changes
 }

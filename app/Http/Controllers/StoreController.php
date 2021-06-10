@@ -17,8 +17,16 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
-        $comments = Review::find(1)->reveiws()->where('comment')->first();
-        return view('index',['stores'=>$stores],['comment'=>$comments]);
+        dd($stores->bestreview());
+        
+        // そのお店が持っている全部のレビューの評価数
+        // 配列の中の数値の合計値 / 配列の合計数
+        // 例：合計値が22 / 5件の評価  など
+
+        $average = 4.2;
+        // ↑上で出た値
+        return view('index',['stores'=>$stores],['average'=>$average]);
+
     }
 
     /**
@@ -50,7 +58,12 @@ class StoreController extends Controller
      */
     public function show($id)
     {
+<<<<<<< Updated upstream
         //
+=======
+        $store = Store::find($id);
+        return view('Reviews.show',['store'=>$store]);
+>>>>>>> Stashed changes
     }
 
     /**
