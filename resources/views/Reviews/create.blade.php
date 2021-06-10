@@ -34,30 +34,38 @@
                         </a></dd>
                 </dl>
             </div>
-            <div class=" shop-review-data">
+            <div class="shop-review-data">
                 <h2>店舗の名前</h2>
                 <div class="average">
                     <span class="star">(平均点の値から★を表示)</span>
                     <span class="value">(review)の値</span>
                 </div>
-                <dl>
-                    <dt class="">カテゴリー：</dt>
-                    <dd>カテゴリー</dd>
-                    <dt>エリア：</dt>
-                    <dd>エリア</dd>
-                    <dt>予算：</dt>
-                    <dd>0000円〜0000円</dd>
-                </dl>
+                <div class="shop-data-center">
+                    <dl>
+                        <dt class="">カテゴリー：</dt>
+                        <dd>カテゴリー</dd>
+                        <dt>エリア：</dt>
+                        <dd>エリア</dd>
+                        <dt>予算：</dt>
+                        <dd>0000円〜0000円</dd>
+                    </dl>
+                    <div class="okini">
+                        <div class="word font">
+                            <p>お気に入りに追加</p>
+                        </div>
+                        <a href=""><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></a>
+                    </div>
+                </div>
             </div>
             <div class="shop-photo">
-                <h3 class="sub-title upper">店舗写真</h3>
+                <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        <img src="" alt="店舗外観">
+                        <img src="/css/noimage.png" alt="店舗外観">
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        <img src="" alt="店舗内">
+                        <img src="/css/noimage.png" alt="店舗内">
                         <p>店舗内</p>
                     </div>
                 </div>
@@ -65,7 +73,8 @@
             <div class="shop-map">
                 <h3 class="sub-title upper2">地図</h3>
                 <div class="shop-detail-link">
-                    <img class="map" src="" alt="店舗外観">
+                    <iframe src="https://maps.google.co.jp/maps?output=embed&q=35.670821,139.702726" frameborder="0"
+                        scrolling="no" marginheight="0" marginwidth="0" width="294" height="220"></iframe>
                 </div>
             </div>
         </div>
@@ -74,17 +83,17 @@
     <section class="bottom-menu">
         {{-- おすすめ近隣店舗 --}}
         <div class="recommend-shops">
-            <h3 class="sub-title">おすすめ近隣店舗</h3>
+            <h3 class="sub-title  upper">おすすめ近隣店舗</h3>
             <div class="recommends">
                 <div class="detail-link">
-                    <a href=""><img src="" alt="店舗詳細リンク"></a>
+                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
                     <a href="">
                         <p>店舗の名前</p>
                     </a>
                     <button class="detail"><a href="">詳細</a></button>
                 </div>
                 <div class="detail-link">
-                    <a href=""><img src="" alt="店舗詳細リンク"></a>
+                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
                     <a href="">
                         <p>店舗の名前</p>
                     </a>
@@ -92,14 +101,14 @@
                 </div>
                 <div class="spacer"></div>
                 <div class="detail-link">
-                    <a href=""><img src="" alt="店舗詳細リンク"></a>
+                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
                     <a href="">
                         <p>店舗の名前</p>
                     </a>
                     <button class="detail"><a href="">詳細</a></button>
                 </div>
                 <div class="detail-link">
-                    <a href=""><img src="" alt="店舗詳細リンク"></a>
+                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
                     <a href="">
                         <p>店舗の名前</p>
                     </a>
@@ -178,7 +187,8 @@
                             </div>
                         </div>{{-- action-button --}}
                     </div>{{-- buttons --}}
-                </div>{{-- low --}}
+                </div>
+                {{-- low --}}
             </form>
         </div>{{-- review-form --}}
     </section>{{-- bottom-menu --}}
