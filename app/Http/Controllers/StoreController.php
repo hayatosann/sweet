@@ -17,7 +17,14 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
-        return view('index',['stores'=>$stores]);
+
+        // そのお店が持っている全部のレビューの評価数
+        // 配列の中の数値の合計値 / 配列の合計数
+        // 例：合計値が22 / 5件の評価  など
+        
+        $average = 4.2（上ででた値）;
+        return view('index',['stores'=>$stores],['average'=>$average]);
+
     }
 
     /**
