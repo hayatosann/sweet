@@ -67,12 +67,12 @@ class ReviewController extends Controller
         $review -> ate_thing = $request -> ate_thing;
         $review -> category_id = $request -> category_id;
         $review -> post_image = $request -> post_image;
-        $review -> published_at = now();
-        $review -> updated_at = $request -> updated_at;
+        
+        if($request->is_published){
+            $review -> published_at = now()
+        }
 
         $review -> save();
-        
-        $review = Review::find($id);
 
         return redirect()->route('stores.show');
 
@@ -89,6 +89,8 @@ class ReviewController extends Controller
         $review = Review::find($id);
     
         return view('stores.show', ['review'=>$review]);
+
+
 
     }
 
@@ -125,8 +127,5 @@ class ReviewController extends Controller
     {
         //
     }
-
-
-
 
 }
