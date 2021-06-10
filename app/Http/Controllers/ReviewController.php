@@ -87,10 +87,14 @@ class ReviewController extends Controller
 
     public function myreview()
     {
+        // ログインしていないユーザーがマイページにアクセスしたらログインページに飛ぶ
+        if( Auth::id() == null){
+            return redirect('/login');
+        }
+
         // ログインユーザーの投稿
         $reviews = Auth::user()->reviews;
         $userdata = Auth::user();
-
         return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
     }
     
