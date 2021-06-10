@@ -37,4 +37,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // ログイン後のリダイレクトをマイページに
+    public function redirectPath()
+    {
+        return '/mypages';
+    }
 }

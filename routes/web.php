@@ -50,3 +50,11 @@ Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
 
 // マイページのRoute
 Route::get('/mypages', 'ReviewController@myreview')->name('reviews.myreview');
+
+
+
+
+// ログインユーザーのみマイページにアクセス
+Route::get('/mypages', function() {
+    // 認証済みのユーザーのみが入れる
+})->middleware('auth');
