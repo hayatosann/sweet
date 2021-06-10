@@ -33,4 +33,4 @@ Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
 Route::get('/mypages', 'ReviewController@myreview')->name('reviews.myreview');
 
 
-Route::get('/reveiws/{review}', 'ReviewController@show')->name('reviews.show')
+Route::get('/reviews/{review}', 'ReviewController@show')->name('reviews.show');
