@@ -87,6 +87,6 @@ class ReviewController extends Controller
             return abort(404);
         }
         $review -> delete();
-        return redirect()->route('reviews.index');
+        return redirect()->route('reviews.myreview');
     }
 }
