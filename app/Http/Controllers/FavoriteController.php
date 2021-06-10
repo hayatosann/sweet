@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Review;
-use App\Store;
-use Auth;
+use App\Favorite;
 use Illuminate\Http\Request;
-
-class StoreController extends Controller
+use Illuminate\Support\Facades\Auth;
+class FavoriteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
-        $comments = Review::find(1)->reveiws()->where('comment')->first();
-        return view('index',['stores'=>$stores],['comment'=>$comments]);
+        //
     }
 
     /**
@@ -39,7 +34,13 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $favorite = new Favorite;
+        $favorite -> user_id = Auth::id();
+        $favorite -> store_id = $request ->  store_id;
+        $favorite ->save();
+        return back();
+
+    
     }
 
     /**
@@ -76,6 +77,7 @@ class StoreController extends Controller
         //
     }
 
+    // 削除機能(表示を変える余力があれば)
     /**
      * Remove the specified resource from storage.
      *
@@ -84,6 +86,11 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //  $favorite = Favorite::find($id);
+        //  if (Auth::id() !== $favorite->user_id) {
+        //      return abort(404);
+        //  }
+        //  $favorite->delete();
+        //  return redirect()->route('sweets.index');
     }
 }
