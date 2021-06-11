@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
+Route::delete('/reviews/{review}/','ReviewController@destroy')->name('reviews.destroy');
 
 
 
@@ -41,8 +42,8 @@ Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
 
-
-
+Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
+// Route::delete('/favorites/{favorite}/destroy', 'FavoriteController@destroy')->name('favorites.destroy');
 
 
 

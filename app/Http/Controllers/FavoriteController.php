@@ -1,15 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Favorite;
 use Illuminate\Http\Request;
-use App\Review;
-
-
-use App\Store;
-use Auth;
-
-class ReviewController extends Controller
+use Illuminate\Support\Facades\Auth;
+class FavoriteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,7 +34,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $favorite = new Favorite;
+        $favorite -> user_id = Auth::id();
+        $favorite -> store_id = $request ->  store_id;
+        $favorite ->save();
+        return back();
+
+    
     }
 
     /**
@@ -76,6 +77,7 @@ class ReviewController extends Controller
         //
     }
 
+    // 削除機能(表示を変える余力があれば)
     /**
      * Remove the specified resource from storage.
      *
@@ -84,21 +86,11 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        $review = Review::find($id);
-        if(Auth::id()!== $review->user_id){
-            return abort(404);
-        }
-        $review -> delete();
-        return redirect()->route('reviews.myreview');
+        //  $favorite = Favorite::find($id);
+        //  if (Auth::id() !== $favorite->user_id) {
+        //      return abort(404);
+        //  }
+        //  $favorite->delete();
+        //  return redirect()->route('sweets.index');
     }
-
-    public function myreview()
-    {
-        // ログインユーザーの投稿
-        $reviews = Auth::user()->reviews;
-        $userdata = Auth::user();
-
-        return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
-    }
-    
 }
