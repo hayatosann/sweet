@@ -53,13 +53,6 @@ class StoreController extends Controller
         $review = Review::find($id);
         return view('reviews.show',['review'=>$review]);
     
-
-    //  https://qiita.com/Sub_Tanabe/items/74feb9ecf9f0b40702f2
-        // 必要なのは 口コミの作成時に内容&画像を保存できる 機能なので
-        // 書く場所は ReviewController@store
-        //画像は直接DBに保存させるので、Sessionを使わない
-
-        
     }
 
     /**
