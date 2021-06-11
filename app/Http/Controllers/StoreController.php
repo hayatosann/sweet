@@ -22,7 +22,7 @@ class StoreController extends Controller
         // 配列の中の数値の合計値 / 配列の合計数
         // 例：合計値が22 / 5件の評価  など
         
-        $average = 4.2（上ででた値）;
+        $average = 4.2;
         return view('index',['stores'=>$stores],['average'=>$average]);
 
     }
