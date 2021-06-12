@@ -50,9 +50,8 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        $review = Review::find($id);
-        return view('reviews.show',['review'=>$review]);
-    
+        $store = Store::find($id);
+        return view('stores.show',['store'=>$store]);
     }
 
     /**

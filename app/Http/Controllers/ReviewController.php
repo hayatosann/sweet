@@ -45,7 +45,6 @@ class ReviewController extends Controller
         $review -> charge = $request -> charge;
         $review -> category_id = $request -> category_id;
         $review -> review = $request -> review;
-        $review -> post_image = $request -> post_image;
         $review -> user_id = Auth::id();
 
         $image = $request->file('post_image');
@@ -54,6 +53,9 @@ class ReviewController extends Controller
             $image_name = $image->getClientOriginalName();
             $review -> post_image = $image->storeAs('public/images', $image_name);
         }
+        if ($request->is_published) {
+            $review -> published_at = now()
+         }
 
         $review -> save();
 
