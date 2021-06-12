@@ -37,8 +37,11 @@
             <div class="shop-review-data">
                 <h2>{{$store->name}}</h2>
                 <div class="average">
-                    <span class="star">(平均点の値から★を表示)</span>
-                    <span class="value">(review)の値</span>
+                    <div v-for="star in [5,4,3,2,1]">
+                        <input v-model="reviewParams.stars" type="radio" :value="star">
+                        <v-star :value="star"></v-star>
+                    </div>
+                    <span class="value">{{$store->review}}</span>
                 </div>
                 <div class="shop-data-center">
                     <dl>
