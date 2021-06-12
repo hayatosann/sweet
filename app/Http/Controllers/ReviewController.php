@@ -24,9 +24,11 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id)
     {
-        //
+        $store = Store::find($id);
+        
+        return view('reviews.create',['store'=>$store]);
     }
 
     /**
@@ -38,24 +40,26 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $review = new Review;
-        $review -> id = $request -> id;
-        $review -> store_id = $request -> store;
-        $review -> comment = $request -> comment;
-        $review -> ate_thing = $request -> ate_thing;
-        $review -> charge = $request -> charge;
-        $review -> category_id = $request -> category_id;
-        $review -> review = $request -> review;
-        $review -> user_id = Auth::id();
 
+        $review -> store_id = $request -> store_id;
+        $review -> comment = $request -> comment;
+        $review -> created_at = $request -> created_at;
+        $review -> user_id = Auth::id();
+        $review -> review = $request -> review;
+        $review -> charge = $request -> charge;
+        $review -> ate_thing = $request -> ate_thing;
+        $review -> category_id = $request -> category_id;
+        $review -> post_image = $request -> post_image;
+        
+        if($request->is_published){
+            $review -> published_at = now();
+        }
         $image = $request->file('post_image');
         // file()で受け取る
         if($request->file('post_image')->isValid()){
             $image_name = $image->getClientOriginalName();
             $review -> post_image = $image->storeAs('public/images', $image_name);
         }
-        if ($request->is_published) {
-            $review -> published_at = now()
-         }
 
         $review -> save();
 
@@ -70,7 +74,12 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+        $review = Review::find($id);
+    
+        return view('stores.show', ['review'=>$review]);
+
+
+
     }
 
     /**
@@ -104,7 +113,12 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        if(Auth::id()!== $review->user_id){
+            return abort(404);
+        }
+        $review -> delete();
+        return redirect()->route('reviews.myreview');
     }
 
     public function myreview()
@@ -115,5 +129,4 @@ class ReviewController extends Controller
 
         return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
     }
-    
 }
