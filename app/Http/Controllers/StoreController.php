@@ -17,15 +17,19 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
-        dd($stores->bestreview());
-        
-        // そのお店が持っている全部のレビューの評価数
-        // 配列の中の数値の合計値 / 配列の合計数
-        // 例：合計値が22 / 5件の評価  など
+        foreach($stores as $store) {
+            $ratings = $store->review_ratings();
 
-        $average = 4.2;
-        // ↑上で出た値
-        return view('index',['stores'=>$stores],['average'=>$average]);
+            if(count($ratings) < 1) continue;
+            
+            $sum = 0;
+            foreach ($ratings as  $id=>$value) {
+                $sum+=$value;
+            }
+            $rating = $sum / count($ratings);
+            $store -> rating = $rating;
+        }
+                return view('index',['stores'=>$stores],['average'=>$average]);
 
     }
 
