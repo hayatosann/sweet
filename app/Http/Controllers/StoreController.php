@@ -6,8 +6,6 @@ use App\Review;
 use App\Store;
 use Auth;
 use Illuminate\Http\Request;
-use App\Store;
-use Auth;
 
 class StoreController extends Controller
 {

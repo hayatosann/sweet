@@ -4,12 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
-
-
 use App\Store;
 use Auth;
-use App\Review;
-use App\Store;
 
 class ReviewController extends Controller
 {
@@ -32,23 +28,7 @@ class ReviewController extends Controller
     {
         $store = Store::find($id);
         
-        $store -> store_id = $request -> store_id;
-        $store -> name = $request -> name;
-        $store -> category_id = $request -> category_id;
-        $store -> address = $request -> address;
-        $store -> opening_hour = $request -> opening_hour;
-        $store -> closing_day = $request -> closing_day;
-        $store -> phone_number = $request -> phone_number;
-        $store -> url = $request -> url;
-        $store -> price = $request -> price;
-        $store -> category_id = $request -> category_id;
-        $store -> prefecture_id = $request -> prefecture_id;
-        $store -> store_image = $request -> store_image;
-        $store -> latitude = $request -> latitude;
-        $store -> longitude = $request -> longitude;
-        $store -> save();
-
-        return view('reviews.create');
+        return view('reviews.create',['store'=>$store]);
     }
 
     /**
