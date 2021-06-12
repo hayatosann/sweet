@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
 
+
+use App\Store;
 use Auth;
 use App\Review;
 use App\Store;
@@ -125,7 +128,20 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        if(Auth::id()!== $review->user_id){
+            return abort(404);
+        }
+        $review -> delete();
+        return redirect()->route('reviews.myreview');
     }
 
+    public function myreview()
+    {
+        // ログインユーザーの投稿
+        $reviews = Auth::user()->reviews;
+        $userdata = Auth::user();
+
+        return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
+    }
 }
