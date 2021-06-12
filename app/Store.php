@@ -9,8 +9,7 @@ class Store extends Model
     function reviews()
     {
         return $this->hasMany('App\Review')
-        ->where('establish_at','<',now())
-        ->get();
+        ->where('published_at','<',now());
     }
 
     function favorites()
