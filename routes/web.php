@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\ReviewController;
 use App\Review;
 use Illuminate\Support\Facades\Route;
@@ -23,14 +24,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('/stores', 'StoreController@index')->name('stores.index');
 Route::get('/stores/{store}', 'StoreController@show')->name('stores.show');
+
+Route::get('/reviews/create','ReviewController@create')->name('reviews.create');
+Route::get('/reviews/{review}','ReviewController@show')->name('reviews.show');
+
+Route::delete('/reviews/{review}/','ReviewController@destroy')->name('reviews.destroy');
 
 Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
 // Route::delete('/favorites/{favorite}/destroy', 'FavoriteController@destroy')->name('favorites.destroy');
 
 // マイページのRoute
 Route::get('/mypages', 'ReviewController@myreview')->name('reviews.myreview');
-
-
-Route::get('/reviews/{review}', 'ReviewController@show')->name('reviews.show');
