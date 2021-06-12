@@ -39,7 +39,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //お店情報入力画面がないので不要。
     }
 
     /**
@@ -50,7 +50,10 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        //
+        $store = Store::find($id);
+        
+        return view ('stores.show', ['store'=>$store]);
+
     }
 
     /**
