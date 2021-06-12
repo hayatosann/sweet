@@ -69,7 +69,7 @@ class ReviewController extends Controller
         $review -> post_image = $request -> post_image;
         
         if($request->is_published){
-            $review -> published_at = now()
+            $review -> published_at = now();
         }
 
         $review -> save();
