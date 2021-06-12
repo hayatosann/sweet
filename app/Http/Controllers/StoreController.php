@@ -97,4 +97,17 @@ class StoreController extends Controller
     {
         //
     }
+
+
+
+    // フォームから飛んできた値で店の名前と住所の中を検索して店一覧(index)に返すメソッド
+    public function search(Request $request)
+    {
+        $word = $request -> searchword;
+        $results = Store::where('name', 'like', "%$word%") -> orwhere('address', 'like', "%$word%") ->get();
+        return view('index', ['stores'=>$results]);
+    }
+
+
+
 }
