@@ -62,12 +62,8 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-<<<<<<< Updated upstream
-        //
-=======
         $store = Store::find($id);
         return view('Reviews.show',['store'=>$store]);
->>>>>>> Stashed changes
     }
 
     /**
