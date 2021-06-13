@@ -11019,6 +11019,9 @@ a.text-dark:focus {
 .search_container input[type="text"]{
   border: none;
   height: 1.8em;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #808080;
+  border-top-left-radius: 5px;
 }
 .search_container input[type="text"]:focus {
   outline: 0;
