@@ -29,7 +29,7 @@ class StoreController extends Controller
             $rating = $sum / count($ratings);
             $store -> rating = $rating;
         }
-                return view('index',['stores'=>$stores],['average'=>$average]);
+                return view('index',['stores'=>$stores]);
 
     }
 
