@@ -33,14 +33,11 @@ class Store extends Model
         ->orderBy('review', 'desc')
         ->orderBy('created_at', 'desc')
         ->first();
-
+    }
 
         function review_ratings()
     {
         return $this->hasMany('App\Review')
                     ->pluck('review');
     }
-
-    }
-
 }
