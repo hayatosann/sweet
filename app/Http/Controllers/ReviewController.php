@@ -99,22 +99,22 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $review = Review::find($id);
+        $review = Rewiew::find($id);
 
-            $review -> store_id = $request -> store_id;
             $review -> comment = $request -> comment;
             $review -> user_id = Auth::id();
             $review -> review = $request -> review;
             $review -> charge = $request -> charge;
             $review -> ate_thing = $request -> ate_thing;
             $review -> category_id = $request -> category_id;
-            $review -> post_image = $request -> post_image;
+            // $review -> post_image = $request -> post_image;
             if($request->is_published){
                 $review -> published_at = now();
             }
             $review -> save();
-
-            return view('Reviews.create',compact('review'));
+            $store = Store::find($request -> store_id);
+            
+            return view ('stores.show', ['store'=>$store]);
     }
 
     /**
