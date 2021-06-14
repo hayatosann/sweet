@@ -88,7 +88,7 @@
             <div class="recommends">
                 <div class="detail-link">
                     <img src="/css/noimage.png" alt="おすすめ商品">
-                    @if({{$store->recommend_image}})
+                    @if($store->recommend_image !== null)
                     <a href="{{route('stores.show')}}" method="GET">
                         <img src="{{$path}}" alt="おすすめ商品">
                     </a>
