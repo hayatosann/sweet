@@ -32,7 +32,17 @@
                             <div class="card-3">
                                 {{-- レビューの星 --}}
                                 <div class="star">
-                                    {{$review->review}}
+                                        @if($review->review === 5)
+                                        <span class="star">{{ '★★★★★' }}</span>
+                                        @elseif($review->review === 4)
+                                        <span class="star">{{ '★★★★☆' }}</span>
+                                        @elseif($review->review === 3)
+                                        <span class="star">{{ '★★★☆☆' }}</span>
+                                        @elseif($review->review === 2)
+                                        <span class="star">{{ '★★☆☆☆' }}</span>
+                                        @elseif($review->review === 1)
+                                        <span class="star">{{ '★☆☆☆☆' }}</span>
+                                        @endif
                                 </div>
                                 {{-- 予算 --}}
                                 <div class="price">
@@ -82,10 +92,11 @@
                         <h4>お気に入り一覧</h4>
                     </div>
                     <p>ユーザーが以前お気に入り登録をした<br>店舗一覧ページに飛びます</p>
-                    <form action="#" method="post">
+                    {{-- お気に入りボタンはいったんコメントアウト --}}
+                    {{-- <form action="#" method="post">
                         <input type="hidden" name="id" value="">
                         <button type="submit" class="favobutton">お気に入り一覧</button>
-                    </form>
+                    </form> --}}
                 </div>
 
                 <div class="cancel-the-membership">
