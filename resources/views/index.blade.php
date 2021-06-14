@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>
+@extends('layouts.header')
 
-    </header>
+@section('css')
+<link rel="stylesheet" href="./css/style.css">
+@endsection
 
+@section('content')
     <div class="container">
         <div class="subject">
             <div class="search">
                 <h2 class="subject font">検索結果</h2>
                 <button class="all_clear font"><form action="">検索条件をリセット</form></button>
                 <h3 class="selected font">指定条件</h3>
-                <ul class="selected_conditions font">(条件が入る）</ul>
+                <ul class="selected_conditions font">(条件が入る）どう引っ張る？？</ul>
             </div>
         </div>
 
         @foreach ($stores as $detail)
         <div class="review">
+          <div class="content">
             <div class="storephoto">
                 <a href=""><img src="" alt="店舗写真"></a>
             </div>
@@ -42,26 +36,40 @@
                 </div>
             </div>
             <div class="info font">
-                <p>{{ $detail->name }}（店舗名引っ張る）</p>
-                <p>{{ $detail->address }}（住所引っ張る）</p>
-                <p>{{ $detail->category->name }}（カテゴリ引っ張る）</p>
-                <p>{{ $detail->price }}（価格引っ張る）</p>
-                <p>{{ $detail->reviews->review }}（評価のポイント平均引っ張る）</p> 
+                <p>{{ $detail->name }}</p>
+                <p>{{ $detail->address }}</p>
+                <p>{{ $detail->category->name }}</p>
+                <p>{{ $detail->price }}</p>
+                <div v-for="star in [5,4,3,2,1]">
+                    <input v-model="reviewParams.stars" type="radio" :value="star">
+                    <v-star :value="star"></v-star>
+                </div>
                 {{-- ↑ここの情報の引っ張り方は村田さんに確認する --}}
-                <button><a href="">詳細</a></button>
+                <div class="button">
+                <button><a href="{{ route('stores.show', $detail->id)}}">詳細（どう飛ぶ？？）</a></button>
+                </div>
+            </div> 
+            <div class="usercoment font">
+                <div class="userinfo">
+                <p>{{ $detail->bestreview()['name'] }}さんの口コミ</p>
+                <p class="add_time">投稿日時：{{ $detail->bestreview()['created_at'] }}</p>
+                </div>
+                <div v-for="star in [5,4,3,2,1]">
+                    <input v-model="reviewParams.stars" type="radio" :value="star">
+                    <v-star :value="star"></v-star>
+                </div>
+                <p>{{ $detail->bestreview()['review'] }}</p>
+                <p>{{ $detail->bestreview()['comment'] }}</p>
+                <div class="button">
+                <button><a href="{{ route('reviews.show', $detail->bestreview()['id'])}}">続きを見る・・・（どう飛ぶ？）</a></button>
+                </div>
             </div>
-            <div class="comment font">
-                <p>{{ $detail->user->id }}（ユーザーネーム引っ張る）さんの口コミ</p>
-                <p>投稿日時：{{ $detail->created_at }}（create時間引っ張る）</p>
-                <p>{{ $detail->reviews->review }}（評価引っ張る）</p>
-                {{-- ↑ここの情報の引っ張り方は村田さんに確認する --}}
-                <p>{{ $detail->reviews->comment }}（コメント引っ張る）</p>
-                <button><a href="">続きを見る・・・</a></button>
-            </div>
+          </div>
         </div>
-        {{-- @endforeach --}}
+        @endforeach
     </div>
 
 
 </body>
 </html>
+@endsection

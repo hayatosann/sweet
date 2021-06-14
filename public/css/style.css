@@ -154,6 +154,8 @@ select {
     flex-wrap: wrap;
     width: 100%;
 }
+
+
 button {
     width: 200px;
     height: 30px;
@@ -169,6 +171,7 @@ button {
 .post {
     background-color: #e0b687;
 }
+
 /* 口コミ一覧 */
 .posting {
     display: flex;
@@ -212,6 +215,7 @@ button {
     margin: 0;
 }
 
+
 *{
     margin: 0;
     padding: 0;
@@ -229,6 +233,8 @@ button {
 .container{
     box-sizing: border-box;
     width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
 }
 
 .all_clear{
@@ -255,4 +261,64 @@ button {
     font-size: 15px;
     text-align: left;
     color: #707070;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+}
+
+.subject{
+    display: flex;
+
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    }
+
+.content {
+    display: flex;
+    margin: 30px;
+}
+
+.storephoto {
+    width: 263px;
+    height: 176px;
+
+}
+
+.add {
+    display: grid;
+    width: 180px;
+    text-align: center;
+}
+
+.info {
+    width: 410px;
+    height: 176px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px 20px;
+}
+
+.usercoment{
+    width: 410px;
+height: 176px;
+font-size: 20px;
+text-align: left;
+}
+
+.userinfo {
+    display: -webkit-box;
+}
+
+.add_time{
+    margin: 0px 20px;
+}
+
+.button {
+    text-align: end;
 }
