@@ -58,10 +58,7 @@ class StoreController extends Controller
     {
 
         $store = Store::find($id);
-        
         return view ('stores.show', ['store'=>$store]);
-
-
     }
 
     /**
