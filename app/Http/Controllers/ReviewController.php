@@ -26,7 +26,7 @@ class ReviewController extends Controller
      */
     public function create(Request $request)
     {
-        $store = Store::find($request->store_id);
+        $store = Store::find($request->id);
         
         return view('reviews.create',['store'=>$store]);
     }
