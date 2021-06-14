@@ -137,7 +137,7 @@
                 </ul>
             </div>
             @endif
-            <form action=" {{route('reviews.create')}} " method="post">
+            <form action=" {{route('reviews.create')}} " method="post" enctype='multipart/form-data'>
                 @csrf
                 <div class="rate">
                     <p>評価(★)</p>
@@ -184,7 +184,7 @@
                         </option>
                         <option value="category_id" selected @if($review->category_id == 9 ) selected @endif>パフェ
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 1 ) selected @endif>その他
+                        <option value="category_id" selected @if($review->category_id == 10 ) selected @endif>その他
                         </option>
                     </select>
                 </div>
