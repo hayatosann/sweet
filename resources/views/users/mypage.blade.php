@@ -32,8 +32,7 @@
                             <div class="card-3">
                                 {{-- レビューの星 --}}
                                 <div class="star">
-                                    {{-- {{$review->review}} --}}
-                                    @if($review->review === 5)
+                                        @if($review->review === 5)
                                         <span class="star">{{ '★★★★★' }}</span>
                                         @elseif($review->review === 4)
                                         <span class="star">{{ '★★★★☆' }}</span>
@@ -43,8 +42,7 @@
                                         <span class="star">{{ '★★☆☆☆' }}</span>
                                         @elseif($review->review === 1)
                                         <span class="star">{{ '★☆☆☆☆' }}</span>
-                                        @else
-                                    @endif
+                                        @endif
                                 </div>
                                 {{-- 予算 --}}
                                 <div class="price">
