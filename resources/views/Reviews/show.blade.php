@@ -16,7 +16,6 @@
             <p class="go_back">一つ前に戻る</p>
         </a>
         <div class="shop">
-            @foreach ($stores as $store)
             <div class="shop-data">
                 <h3 class="sub-title">店舗情報</h3>
                 <dl class="data_a">
@@ -70,7 +69,7 @@
                 <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        @if({{$store->store_image}})
+                        @if($store->store_image)
                         <img src="{{$path}}" alt="店頭写真">
                         @else
                         <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -78,7 +77,7 @@
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        @if({{$store->store_image}})
+                        @if($store->store_image)
                         <img src="{{$path}}" alt="店内写真">
                         @else
                         <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -96,18 +95,16 @@
                         height="220"></iframe>
                 </div>
             </div>
-            @endforeach
         </div>{{-- .shop --}}
     </section>
     <hr>
     <section class="bottom-menu">
         {{-- 看板メニュー --}}
         <div class="recommend-shops">
-            @foreach ($stores as $store)
             <h3 class="sub-title upper">看板メニュー</h3>
             <div class="recommends">
                 <div class="detail-link">
-                    @if({{$store->recommend_image}})
+                    @if($store->recommend_image)
                     <img src="{{$path}}" alt="おすすめ商品">
                     @else
                     <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -128,7 +125,6 @@
                     <p>商品名</p>
                 </div>
             </div>{{-- recommend_shops --}}
-            @endforeach
         </div>
         {{-- 口コミ一覧 --}}
         <div class="review">
@@ -183,7 +179,7 @@
                         <span class="value">{{$reviews->review}}</span>
                     </div>
                 </div>
-                @if ({{$reviews->post_image}})
+                @if ($reviews->post_image)
                 <img src="{{$path}}" alt="投稿写真">
                 @else
                 <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
