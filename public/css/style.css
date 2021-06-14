@@ -131,6 +131,7 @@ select {
 .star {
     display: flex;
     flex-direction: row;
+    color: #707070;
 }
 .star > p {
     width: 150px;
