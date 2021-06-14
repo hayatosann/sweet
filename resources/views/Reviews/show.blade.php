@@ -69,7 +69,7 @@
                 <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        @if($store->store_image)
+                        @if($store->store_image !== null)
                         <img src="{{$path}}" alt="店頭写真">
                         @else
                         <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -77,7 +77,7 @@
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        @if($store->store_image)
+                        @if($store->store_image !== null)
                         <img src="{{$path}}" alt="店内写真">
                         @else
                         <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -104,7 +104,7 @@
             <h3 class="sub-title upper">看板メニュー</h3>
             <div class="recommends">
                 <div class="detail-link">
-                    @if($store->recommend_image)
+                    @if($store->recommend_image !== null)
                     <img src="{{$path}}" alt="おすすめ商品">
                     @else
                     <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
@@ -179,7 +179,7 @@
                         <span class="value">{{$reviews->review}}</span>
                     </div>
                 </div>
-                @if ($reviews->post_image)
+                @if ($reviews->post_image !== null)
                 <img src="{{$path}}" alt="投稿写真">
                 @else
                 <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
