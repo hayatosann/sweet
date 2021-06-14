@@ -1,5 +1,10 @@
 @extends('layouts.header')
 
+@section('css')
+<link rel="stylesheet" href="./css/style.css">
+@endsection
+
+@section('content')
     <div class="container">
         <div class="subject">
             <div class="search">
@@ -67,3 +72,4 @@
 
 </body>
 </html>
+@endsection

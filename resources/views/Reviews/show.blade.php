@@ -1,5 +1,11 @@
 @extends('layouts.header')
 
+@section('css')
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+@endsection
+
+@section('content')
 <body>
     <section class="upper-menu">
         <a href="">
@@ -188,3 +194,4 @@
 </body>
 
 </html>
+@endsection
