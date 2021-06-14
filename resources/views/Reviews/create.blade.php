@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.header')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>口コミ投稿・編集</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+@section('css')
+<link rel="stylesheet" type="text/css" href="css/style.css">
+@endsection
 
-</head>
-
+@section('content')
 <body>
     <section class="upper-menu">
         <a href="">
@@ -224,3 +218,4 @@
 </body>
 
 </html>
+@endsection

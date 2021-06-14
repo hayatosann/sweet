@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>マイページ</title>
-    <link rel="stylesheet" href="./css/mypage.css">
-</head>
-<body>
-    <header>
-            <a href="" class="toppage-jump">Sweets Guide</a>
-    </header>
+@extends('layouts.header')
+
+@section('css')
+<link href="{{ asset('css/mypage.css') }}" rel="stylesheet">
+@endsection
+
+@section('content')
     <main>
         <article class="mypage">
             <section class="mypage-title">
@@ -115,3 +109,4 @@
     </main>
 </body>
 </html>
+@endsection
