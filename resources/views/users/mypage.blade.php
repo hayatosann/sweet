@@ -1,4 +1,10 @@
 @extends('layouts.header')
+
+@section('css')
+<link href="{{ asset('css/mypage.css') }}" rel="stylesheet">
+@endsection
+
+@section('content')
     <main>
         <article class="mypage">
             <section class="mypage-title">
@@ -92,3 +98,4 @@
     </main>
 </body>
 </html>
+@endsection
