@@ -8,7 +8,8 @@ class Store extends Model
 {
     function reviews()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany('App\Review')
+        ->where('published_at','<',now());
     }
 
     function favorites()
@@ -24,5 +25,14 @@ class Store extends Model
     function prefecture()
     {
         return $this->belongsTo('App\Prefectue');
+    }
+
+    function bestreview()
+    {
+        return $this->hasMany('App\Review')
+        ->orderBy('review', 'desc')
+        ->orderBy('created_at', 'desc')
+        ->first();
+
     }
 }
