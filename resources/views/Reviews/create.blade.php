@@ -82,7 +82,7 @@
     <hr>
     <section class="bottom-menu">
         {{-- おすすめ近隣店舗 --}}
-        <div class="recommend-shops">
+        {{-- <div class="recommend-shops">
             @foreach ($stores as $store)
             <h3 class="sub-title  upper">おすすめ近隣店舗</h3>
             <div class="recommends">
@@ -90,42 +90,42 @@
                     <img src="/css/noimage.png" alt="おすすめ商品">
                     @if($store->recommend_image !== null)
                     <a href="{{route('stores.show')}}" method="GET">
-                        <img src="{{$path}}" alt="おすすめ商品">
-                    </a>
-                    @else
-                    <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
-                    @endif
-                    <p>{{$store->recomm}}</p>
-                    <a href="{{route('stores.show')}}" method="GET">
-                        <p>{{$store->name}}</p>
-                    </a>
-                    <button class="detail"><a href="{{route('stores.show')}}" method="GET">詳細</a></button>
-                </div>
-                <div class="detail-link">
-                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
-                    <a href="">
-                        <p>店舗の名前</p>
-                    </a>
-                    <button class="detail"><a href="">詳細</a></button>
-                </div>
-                <div class="spacer"></div>
-                <div class="detail-link">
-                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
-                    <a href="">
-                        <p>店舗の名前</p>
-                    </a>
-                    <button class="detail"><a href="">詳細</a></button>
-                </div>
-                <div class="detail-link">
-                    <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
-                    <a href="">
-                        <p>店舗の名前</p>
-                    </a>
-                    <button class="detail"><a href="">詳細</a></button>
-                </div>
-            </div>
-            @endforeach
+        <img src="{{$path}}" alt="おすすめ商品">
+        </a>
+        @else
+        <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+        @endif
+        <p>{{$store->recomm}}</p>
+        <a href="{{route('stores.show')}}" method="GET">
+            <p>{{$store->name}}</p>
+        </a>
+        <button class="detail"><a href="{{route('stores.show')}}" method="GET">詳細</a></button>
         </div>
+        <div class="detail-link">
+            <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
+            <a href="">
+                <p>店舗の名前</p>
+            </a>
+            <button class="detail"><a href="">詳細</a></button>
+        </div>
+        <div class="spacer"></div>
+        <div class="detail-link">
+            <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
+            <a href="">
+                <p>店舗の名前</p>
+            </a>
+            <button class="detail"><a href="">詳細</a></button>
+        </div>
+        <div class="detail-link">
+            <a href=""><img src="/css/noimage.png" alt="店舗詳細リンク"></a>
+            <a href="">
+                <p>店舗の名前</p>
+            </a>
+            <button class="detail"><a href="">詳細</a></button>
+        </div>
+        </div>
+        @endforeach
+        </div> --}}
         {{-- 口コミ編集フォーム --}}
         <div class="review-form">
             @if ($errors->any())
@@ -142,12 +142,12 @@
                 <div class="rate">
                     <p>評価(★)</p>
                     <select name="rating">
-                        <option value="0" @if( $review-> rating == 0) selected @endif>☆☆☆☆☆</option>
-                        <option value="1" @if( $review-> rating == 1) selected @endif>★☆☆☆☆</option>
-                        <option value="2" @if( $review-> rating == 2) selected @endif>★★☆☆☆</option>
-                        <option value="3" @if( $review-> rating == 3) selected @endif>★★★☆☆</option>
-                        <option value="4" @if( $review-> rating == 4) selected @endif>★★★★☆</option>
-                        <option value="5" @if( $review-> rating == 5) selected @endif>★★★★★</option>
+                        <option value="0">☆☆☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="5">★★★★★</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -166,25 +166,24 @@
                 <div class="form-group">
                     <label class="space">カテゴリ</label>
                     <select id="sweets">
-                        <option value="category_id" selected @if($review->category_id == 1 ) selected @endif>ケーキ
+                        <option value="category_id">ケーキ
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 2 ) selected @endif>タルト、パイ
+                        <option value="category_id">タルト、パイ
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 3 ) selected @endif>プリン
+                        <option value="category_id">プリン
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 4 ) selected @endif>チョコレート
+                        <option value="category_id">チョコレート
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 5 ) selected @endif>シュークリーム
+                        <option value="category_id">シュークリーム
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 6 ) selected @endif>クッキー
+                        <option value="category_id">クッキー
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 7 ) selected
-                            @endif>アイスクリーム、シャーベット</option>
-                        <option value="category_id" selected @if($review->category_id == 8 ) selected @endif>クレープ
+                        <option value="category_id">アイスクリーム、シャーベット</option>
+                        <option value="category_id">クレープ
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 9 ) selected @endif>パフェ
+                        <option value="category_id">パフェ
                         </option>
-                        <option value="category_id" selected @if($review->category_id == 10 ) selected @endif>その他
+                        <option value="category_id">その他
                         </option>
                     </select>
                 </div>
@@ -205,12 +204,6 @@
                         <div class="action-button">
                             <div class="text-right">
                                 <button type="submit" class="btn overwrite" value="保存">上書きして保存</button>
-                            </div>
-                            <div class="text-right">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" formaction=' {{ route('reviews.destroy', $review->id)}} '
-                                    method='post' class="btn delete">口コミを削除する</button>
                             </div>
                             <div class="spacer"></div>
                             <div class="text-right">
