@@ -104,7 +104,7 @@
                         <h4>ユーザー退会</h4>
                     </div>
                     <p>ユーザー登録を退会します。<br>退会後、あなたが過去に投稿された口コミは<br>"退会ユーザー"の投稿として、残ることになります</p>
-                    <form action="#" method="post">
+                    <form action="{{route('deactive.form')}}" method="get">
                         <input type="hidden" name="id" value="">
                         <button type="submit" class="deletedata-button">退会ページ</button>
                     </form>

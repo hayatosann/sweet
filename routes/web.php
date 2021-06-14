@@ -46,5 +46,9 @@ Route::post('/favorites', 'FavoriteController@store')->name('favorites.store');
 // マイページのRoute
 Route::get('/mypages', 'ReviewController@myreview')->name('reviews.myreview');
 
-
+// 退会機能
+// 通常アクセス(GET)
+Route::get('/cancel_membership', 'Auth\DeleteuserController@showDeactiveForm')->name('deactive.form');
+// パスワード変更の処理(POST)
+Route::post('/cancel_membership', 'Auth\DeleteuserController@deactive')->name('deactive');
 
