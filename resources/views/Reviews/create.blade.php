@@ -142,50 +142,49 @@
                 <div class="rate">
                     <p>評価(★)</p>
                     <select name="rating">
-                        <option value="0" selected @if(old('comment')=='0' ) selected @endif>☆☆☆☆☆</option>
-                        <option value="1" selected @if(old('comment')=='1' ) selected @endif>★☆☆☆☆</option>
-                        <option value="2" selected @if(old('comment')=='2' ) selected @endif>★★☆☆☆</option>
-                        <option value="3" selected @if(old('comment')=='3' ) selected @endif>★★★☆☆</option>
-                        <option value="4" selected @if(old('comment')=='4' ) selected @endif>★★★★☆</option>
-                        <option value="5" selected @if(old('comment')=='5' ) selected @endif>★★★★★</option>
+                        <option value="0" @if( $review-> rating == 0) selected @endif>☆☆☆☆☆</option>
+                        <option value="1" @if( $review-> rating == 1) selected @endif>★☆☆☆☆</option>
+                        <option value="2" @if( $review-> rating == 2) selected @endif>★★☆☆☆</option>
+                        <option value="3" @if( $review-> rating == 3) selected @endif>★★★☆☆</option>
+                        <option value="4" @if( $review-> rating == 4) selected @endif>★★★★☆</option>
+                        <option value="5" @if( $review-> rating == 5) selected @endif>★★★★★</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>口コミ内容記入</label>
                     <textarea type="text" name="comment" class="form-control" placeholder="お店の雰囲気などを記入してください" cols="110"
-                        rows="3">{{old('comment'),$reviews->comment}}</textarea>
+                        rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <label class="space">食べたもの</label>
-                    <input type="text" name="ate_thing" class="form-control"
-                        value="{{old('ate_thing'),$reviews->ate_thing}}">
+                    <input type="text" name="ate_thing" class="form-control">
                 </div>
                 <div class="form-group">
                     <label class="space">支払額</label>
-                    <input type="text" name="charge" class="form-control" value="{{old('charge'),$reviews->charge}}">
+                    <input type="text" name="charge" class="form-control">
                 </div>
                 <div class="form-group">
                     <label class="space">カテゴリ</label>
                     <select id="sweets">
-                        <option value="category_id" selected @if(old('category_id')=='ケーキ' ) selected @endif>ケーキ
+                        <option value="category_id" selected @if($review->category_id == 1 ) selected @endif>ケーキ
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='タルト、パイ' ) selected @endif>タルト、パイ
+                        <option value="category_id" selected @if($review->category_id == 2 ) selected @endif>タルト、パイ
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='プリン' ) selected @endif>プリン
+                        <option value="category_id" selected @if($review->category_id == 3 ) selected @endif>プリン
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='チョコレート' ) selected @endif>チョコレート
+                        <option value="category_id" selected @if($review->category_id == 4 ) selected @endif>チョコレート
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='シュークリーム' ) selected @endif>シュークリーム
+                        <option value="category_id" selected @if($review->category_id == 5 ) selected @endif>シュークリーム
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='クッキー' ) selected @endif>クッキー
+                        <option value="category_id" selected @if($review->category_id == 6 ) selected @endif>クッキー
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='アイスクリーム、シャーベット' ) selected @endif>
-                            アイスクリーム、シャーベット</option>
-                        <option value="category_id" selected @if(old('category_id')=='クレープ' ) selected @endif>クレープ
+                        <option value="category_id" selected @if($review->category_id == 7 ) selected
+                            @endif>アイスクリーム、シャーベット</option>
+                        <option value="category_id" selected @if($review->category_id == 8 ) selected @endif>クレープ
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='クレープ' ) selected @endif>パフェ
+                        <option value="category_id" selected @if($review->category_id == 9 ) selected @endif>パフェ
                         </option>
-                        <option value="category_id" selected @if(old('category_id')=='その他' ) selected @endif>その他
+                        <option value="category_id" selected @if($review->category_id == 1 ) selected @endif>その他
                         </option>
                     </select>
                 </div>
@@ -193,14 +192,13 @@
                     <div class="form-group picture">
                         <label class="space">写真</label>
                         <label>
-                            <input ref="photo" name="post_image" value="{{old('post_image'),$reviews->post_image}}"
-                                type="file" class="form-control" accept="image/gif,image/jpeg,image/png"
-                                @change="onFileChange" multiple>
+                            <input ref="photo" name="post_image" type="file" class="form-control"
+                                accept="image/gif,image/jpeg,image/png" @change="onFileChange" multiple>
                         </label>
                     </div>
                     <div class="form-group">
                         <label class="space">投稿日時</label>
-                        <input type="date" name="created_at" value="{{old('created_at'),$reviews->created_at}}">
+                        <input type="date" name="created_at">
                     </div>
                     {{-- アクションボタンたち --}}
                     <div class="buttons">
