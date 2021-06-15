@@ -42,7 +42,7 @@ class StoreController extends Controller
      */
     public function create(Request $request, $id)
     {
-        $store = Store::find($id);
+        $store = Store::find($request->store_id);
         
         return view('reviews.create',['store'=>$store]);
     }

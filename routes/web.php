@@ -25,7 +25,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/stores','StoreController');
-Route::resource('/reviews','ReviewController');
 
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
