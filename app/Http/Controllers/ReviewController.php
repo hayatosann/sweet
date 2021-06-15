@@ -86,6 +86,7 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review = Review::find($id);
+        $store = Store::find($review -> store_id);
 
         return view('Reviews.edit',['review'=>$review]);
     }
