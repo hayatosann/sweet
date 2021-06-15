@@ -18,12 +18,20 @@ class StoreController extends Controller
     {
         $stores = Store::all();
 
-        // そのお店が持っている全部のレビューの評価数
-        // 配列の中の数値の合計値 / 配列の合計数
-        // 例：合計値が22 / 5件の評価  など
-        
-        $average = 4.2;
-        return view('index',['stores'=>$stores],['average'=>$average]);
+        foreach($stores as $store) {
+            $ratings = $store->review_ratings();
+
+            if(count($ratings) < 1) continue;
+            
+            $sum = 0;
+            foreach ($ratings as  $id=>$value) {
+                $sum+=$value;
+            }
+            $rating = $sum / count($ratings);
+            $store -> rating = $rating;
+        }
+                return view('index',['stores'=>$stores]);
+
 
     }
 
@@ -59,6 +67,7 @@ class StoreController extends Controller
 
         $store = Store::find($id);
         return view ('stores.show', ['store'=>$store]);
+
     }
 
     /**

@@ -75,10 +75,8 @@ class ReviewController extends Controller
     public function show($id)
     {
         $review = Review::find($id);
-    
+   
         return view('stores.show', ['review'=>$review]);
-
-
 
     }
 
