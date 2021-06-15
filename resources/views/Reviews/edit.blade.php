@@ -134,15 +134,15 @@
                 </div>
                 <div class="form-group">
                     <label>口コミ内容記入</label>
-                    <textarea type="text" class="form-control" id="" cols="110" rows="3">{{$review->comment}}</textarea>
+                    <textarea type="text" class="form-control" id="" cols="110" rows="3" name="comment">{{$review->comment}}</textarea>
                 </div>
                 <div class="form-group">
                     <label class="space">食べたもの</label>
-                    <input type="text" class="form-control" value="{{$review->ate_thing}}">
+                    <input type="text" class="form-control" value="{{$review->ate_thing}}" name="ate_thing">
                 </div>
                 <div class="form-group">
                     <label class="space">支払額</label>
-                    <input type="text" class="form-control" value="{{$review->charge}}">
+                    <input type="text" class="form-control" value="{{$review->charge}}" name="charge">
                 </div>
                 <div class="form-group">
                     <label class="space">カテゴリ</label>
@@ -163,13 +163,13 @@
                     <div class="form-group picture">
                         <label class="space">写真</label>
                         <label>
-                            <input ref="photo" type="file" class="form-control" value="{{$review -> published_at}}" accept="image/gif,image/jpeg,image/png"
+                            <input ref="photo" type="file" class="form-control" value="{{$review -> published_at}}" name="published_at" accept="image/gif,image/jpeg,image/png"
                                 @change="onFileChange" multiple>
                         </label>
                     </div>
                     <div class="form-group">
                         <label class="space">投稿日時</label>
-                        <input type="date">
+                        <input type="date" name="update">
                     </div>
                     {{-- アクションボタンたち --}}
                     <div class="buttons">

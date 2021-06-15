@@ -100,7 +100,7 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $review = Rewiew::find($id);
+        $review = Review::find($id);
 
             $review -> comment = $request -> comment;
             $review -> user_id = Auth::id();
