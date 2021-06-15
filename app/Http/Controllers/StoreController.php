@@ -30,7 +30,7 @@ class StoreController extends Controller
             $rating = $sum / count($ratings);
             $store -> rating = $rating;
         }
-                return view('index',['stores'=>$stores]);
+                return view('stores.index',['stores'=>$stores]);
 
 
     }
@@ -40,9 +40,11 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id)
     {
-        //
+        $store = Store::find($id);
+        
+        return view('reviews.create',['store'=>$store]);
     }
 
     /**

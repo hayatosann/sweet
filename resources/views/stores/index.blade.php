@@ -9,9 +9,9 @@
         <div class="subject">
             <div class="search">
                 <h2 class="subject font">検索結果</h2>
-                <button class="all_clear font"><form action="">検索条件をリセット</form></button>
+                {{-- <button class="all_clear font"><form action="">検索条件をリセット</form></button>
                 <h3 class="selected font">指定条件</h3>
-                <ul class="selected_conditions font">(条件が入る）どう引っ張る？？</ul>
+                <ul class="selected_conditions font">(条件が入る）どう引っ張る？？</ul> --}}
             </div>
         </div>
 
@@ -19,7 +19,11 @@
         <div class="review">
           <div class="content">
             <div class="storephoto">
-                <a href=""><img src="" alt="店舗写真"></a>
+                @if($detail->store_image !== null)
+                <img src="{{$detail->store_image}}" alt="店舗写真">
+                @else
+                <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                @endif
             </div>
             <div class="add">
                 <div class="word font">
@@ -30,7 +34,8 @@
                         <input type="hidden" name="store_id" value="{{ $detail->id }}">             
                         <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></button>
                 </form>
-            <a href=""><img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
+                <a hreg="{{route('stores.create', $detail->id)}}">
+                       <img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
                 <div class="word font">
                     <p>口コミを投稿する</p>
                 </div>
