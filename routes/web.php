@@ -25,13 +25,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/stores','StoreController');
-
+Route::resource('/reviews','ReviewController');
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 // 検索機能（ビューの検索フォームのactionに入れるルート）
 Route::get('/stores', 'StoreController@search')->name('stores.search');
-// indexから各店舗の口コミを記載するページに飛ぶルート
-Route::get('/stores/{store}', 'StoreController@create')->name('stores.create');
 
 // Route::get('/stores', 'StoreController@index')->name('stores.index');
 // Route::get('/stores/{store}', 'StoreController@show')->name('stores.show');

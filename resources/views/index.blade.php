@@ -22,7 +22,7 @@
                 @if($detail->store_image !== null)
                 <img src="{{$detail->store_image}}" alt="店舗写真">
                 @else
-                <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                <img class="post-img" src="./css/noimage.png" alt="NO_IMAGE">
                 @endif
             </div>
             <div class="add">
@@ -45,13 +45,28 @@
                 <p>{{ $detail->address }}</p>
                 <p>{{ $detail->category->name }}</p>
                 <p>{{ $detail->price }}</p>
-                <div v-for="star in [5,4,3,2,1]">
-                    <input v-model="reviewParams.stars" type="radio" :value="star">
-                    <v-star :value="star"></v-star>
+                <div class="stars">
+                <span class="star font">
+                    <span>
+                        {{$detail->review > 1 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->review  > 2 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->review  > 3 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->review  > 4 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->review  > 5 ? '★' : '☆' }}
+                    </span>
+                </span>
+                <span class="value font">{{$detail->review}}</span>
                 </div>
-                {{-- ↑ここの情報の引っ張り方は村田さんに確認する --}}
                 <div class="button">
-                <button><a href="{{ route('stores.show', $detail->id)}}">詳細（どう飛ぶ？？）</a></button>
+                <button><a href="/reviews/show?id={{$detail->id}}">詳細</a></button>
                 </div>
             </div> 
             <div class="usercoment font">
@@ -59,14 +74,27 @@
                 <p>{{ $detail->bestreview()['name'] }}さんの口コミ</p>
                 <p class="add_time">投稿日時：{{ $detail->bestreview()['created_at'] }}</p>
                 </div>
-                <div v-for="star in [5,4,3,2,1]">
-                    <input v-model="reviewParams.stars" type="radio" :value="star">
-                    <v-star :value="star"></v-star>
-                </div>
-                <p>{{ $detail->bestreview()['review'] }}</p>
+                <span class="star font">
+                    <span>
+                        {{$detail->bestreview()['review'] > 1 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->bestreview()['review'] > 2 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->bestreview()['review'] > 3 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->bestreview()['review'] > 4 ? '★' : '☆' }}
+                    </span>
+                    <span>
+                        {{$detail->bestreview()['review'] > 5 ? '★' : '☆' }}
+                    </span>
+                </span>
+                <span class="value font">{{$detail->bestreview()['review']}}</span>
                 <p>{{ $detail->bestreview()['comment'] }}</p>
                 <div class="button">
-                <button><a href="{{ route('reviews.show', $detail->bestreview()['id'])}}">続きを見る・・・（どう飛ぶ？）</a></button>
+                <button><a href="/reviews/show?id={{ $detail->bestreview(['id'])}}">続きを見る</a></button>
                 </div>
             </div>
           </div>

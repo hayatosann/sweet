@@ -166,7 +166,8 @@ button {
     width: 100%;
 }
 .btn {
-    background-color: #f0dadb;
+    /* background-color: #f0dadb; */
+    height: 100px;
 }
 .post {
     background-color: #e0b687;
@@ -277,6 +278,7 @@ button {
     display: flex;
     flex-direction: column;
     width: 1920px;
+    height: 266px;
     }
 
 .content {
@@ -321,4 +323,8 @@ text-align: left;
 
 .button {
     text-align: end;
+}
+
+.stars{
+    display: inline-block;
 }
