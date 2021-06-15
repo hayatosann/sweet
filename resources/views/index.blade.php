@@ -66,7 +66,7 @@
                 <span class="value font">{{$detail->review}}</span>
                 </div>
                 <div class="button">
-                <button><a href="/reviews/show?id={{$detail->id}}">詳細</a></button>
+                <button><a href="{{route('stores.show', $detail->id}})">詳細</a></button>
                 </div>
             </div> 
             <div class="usercoment font">
@@ -94,7 +94,7 @@
                 <span class="value font">{{$detail->bestreview()['review']}}</span>
                 <p>{{ $detail->bestreview()['comment'] }}</p>
                 <div class="button">
-                <button><a href="/reviews/show?id={{ $detail->bestreview(['id'])}}">続きを見る</a></button>
+                <button><a href="{{route('stores.show', $detail->bestreview(['id']))}}">続きを見る</a></button>
                 </div>
             </div>
           </div>
