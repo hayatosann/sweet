@@ -40,11 +40,9 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $id)
+    public function create()
     {
-        $store = Store::find($request->store_id);
-        
-        return view('reviews.create',['store'=>$store]);
+       //
     }
 
     /**
