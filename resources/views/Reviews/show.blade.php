@@ -8,7 +8,7 @@
 @section('content')
 
 <body>
-    <section class=" upper-menu">
+    <section class="upper-menu">
         <a href="">
             <p class="go_back">一つ前に戻る</p>
         </a>
