@@ -1,7 +1,8 @@
 @extends('layouts.header')
 
 @section('css')
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('content')
