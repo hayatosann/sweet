@@ -64,25 +64,21 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-
         $store = Store::find($id);
         $ratings = $store->review_ratings();
-        
+
         $sum = 0;
         foreach ($ratings as  $id=>$value) {
             $sum+=$value;
         }
 
-        if($sum / count($ratings) == 0){
-            $rating = 0;
+        if($sum == 0){
+            $store -> rating = 0;
         }else{
-            $rating = round($sum / count($ratings) , 1);
+            $store -> rating = round($sum / count($ratings), 1);
         }
 
-        $store -> rating = $rating;
-
         return view ('stores.show', ['store'=>$store]);
-
     }
 
     /**
