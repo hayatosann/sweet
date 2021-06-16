@@ -60,7 +60,7 @@
                         </p>
 
                         <div class="send-button">
-                            <form action="#" method="post">
+                            <form action="{{route('reviews.edit', $review->id)}}" method="get">
                                 <input type="hidden" name="id" value="">
                                 <button type="submit" class="edit-button">編集・削除</button>
                             </form>
