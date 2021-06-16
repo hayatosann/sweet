@@ -54,10 +54,10 @@
                         </div>
                         <form action="{{ route('favorites.store') }}" method="POST">
                             @csrf
-                            <input type="hi
-                                dden" name="store_id" value="{{ $store->id }}">
-                            <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg"
-                                    alt="お気に入り星" class="rogo"></button>
+                            <input type="hidden" name="store_id" value="{{ $store->id }}">
+                            <button type="submit" class="btn text-danger">
+                                <img src="../css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo">
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
             <div class="posting">
                 <h3>口コミ一覧</h3>
                 <button type="submit" class="btn-text-danger">
-                    <img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo">
+                    <img src="../css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo">
                 </button>
                 <div class="word font">
                     <a href="/reviews/create?store_id={{$store->id}}"></a>
