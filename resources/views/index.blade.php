@@ -19,10 +19,10 @@
         <div class="review">
           <div class="content">
             <div class="storephoto">
-                @if($detail->store_image !== null)
-                <img src="{{$detail->store_image}}" alt="店舗写真">
-                @else
+                @if($detail->store_image == null)
                 <img class="post-img" src="./css/noimage.png" alt="NO_IMAGE">
+                @else
+                <img src="{{$detail->store_image}}" alt="店舗写真">
                 @endif
             </div>
             <div class="add">
