@@ -69,7 +69,7 @@
                         @if($store->store_image !== null)
                         <img src="{{$store->store_image}}" alt="店頭写真">
                         @else
-                        <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                         @endif
                         <p>店舗外観</p>
                     </div>
@@ -77,7 +77,7 @@
                         @if($store->store_image !== null)
                         <img src="{{$store->store_image}}" alt="店内写真">
                         @else
-                        <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                         @endif
                         <p>店舗内</p>
                     </div>
@@ -104,7 +104,7 @@
                     @if($store->recommend_image !== null)
                     <img src="{{$store->recommend_image}}" alt="おすすめ商品">
                     @else
-                    <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                     @endif
                     <p>{{$store->recommend_product}}</p>
                 </div>
@@ -112,7 +112,7 @@
                     @if($store->recommend_image !== null)
                     <img src="{{$store->recommend_image}}" alt="おすすめ商品">
                     @else
-                    <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                     @endif
                     <p>{{$store->recommend_product}}</p>
                 </div>
@@ -121,7 +121,7 @@
                     @if($store->recommend_image !== null)
                     <img src="{{$store->recommend_image}}" alt="おすすめ商品">
                     @else
-                    <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                     @endif
                     <p>{{$store->recommend_product}}</p>
                 </div>
@@ -129,7 +129,7 @@
                     @if($store->recommend_image !== null)
                     <img src="{{$store->recommend_image}}" alt="おすすめ商品">
                     @else
-                    <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                     @endif
                     <p>{{$store->recommend_product}}</p>
                 </div>
@@ -139,27 +139,22 @@
         <div class="review">
             <div class="posting">
                 <h3>口コミ一覧</h3>
-                <form action="{{ route('reviews.create') }}" method="GET">
-                    @csrf
-                    <input type="hi
-                    dden" name="" id="{{$store->id}}">
-                    <button type="submit" class="btn-text-danger">
-                        <img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo">te
-                    </button>
-                    <div class="word font">
-                        <a href="/reviews/create?store_id={{$store->id}}"></a>
-                        <p>口コミを投稿する</p>
-                    </div>
+                <button type="submit" class="btn-text-danger">
+                    <img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo">
+                </button>
+                <div class="word font">
+                    <a href="/reviews/create?store_id={{$store->id}}"></a>
+                    <p>口コミを投稿する</p>
+                </div>
             </div>
             <div class="review-wrapper">
                 {{-- 投稿した内容を表示 --}}
-                @foreach ($store->$reviews as $review)
+                @foreach ($store->reviews as $review)
                 <div class="review-details">
                     <dl class="posted-data">
-                        <dt class="post-title row">{{$review->name}}さんの口コミ</dt>
+                        <dt class="post-title row">{{$review->user->name}}さんの口コミ</dt>
                         <dt class="post-title date">投稿日時：</dt>
                         <dd class="date">{{$review->published_at}}</dd>
-                        <dd>カテゴリー</dd>
                         <dt class="post-title">食べたもの：</dt>
                         <dd>{{$review->ate_thing}}</dd>
                         <dt class="post-title">カテゴリー：</dt>
@@ -185,13 +180,13 @@
                                 {{$review->review > 5 ? '★' : '☆' }}
                             </span>
                         </span>
-                        <span class="value">{{$review->review}}</span>
+                        <span class="value">{{$review->comment}}</span>
                     </div>
                 </div>
-                @if ($review->store->post_image !== null)
+                @if ($review->post_image !== null)
                 <img src="{{$review->store->post_image}}" alt="投稿写真">
                 @else
-                <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                 @endif
                 @endforeach
             </div>{{-- review-wrapper --}}
