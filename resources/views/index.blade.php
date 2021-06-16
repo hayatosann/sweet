@@ -71,7 +71,11 @@
             </div> 
             <div class="usercoment font">
                 <div class="userinfo">
-                <p>{{ $detail->bestreview()['user_id->name'] }}さんの口コミ</p>
+                    @if($detail->bestreview()['user'])
+                    <p>{{ $detail->bestreview()['user']['name'] }}さんの口コミ</p>
+                    @else
+                    <p>退会されたユーザーの口コミ</p>
+                    @endif
                 <p class="add_time">投稿日時：{{ $detail->bestreview()['created_at'] }}</p>
                 </div>
                 <span class="star font">
