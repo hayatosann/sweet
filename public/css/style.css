@@ -219,7 +219,6 @@ button {
 /* 投稿写真 */
 .post-img {
     height: 120px;
-    /* flex-direction: row; */
     align-items: center;
     margin-top: 30%;
 }
@@ -455,4 +454,12 @@ li {
     border: 1px solid;
     background-color: transparent;
     color: #505050;
+}
+/* アイスシャーベットのチェックボタン */
+.m__form__checkbox_btnice{
+    position: relative;
+    bottom: 7px;
+}
+.m__form__checkbox_label-ice{
+    font-size: 14px;
 }

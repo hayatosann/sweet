@@ -270,8 +270,8 @@
                         <label for="cookie" class="m__form__checkbox_label">クッキー</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="category[]" value="ice-sherbet" id="ice-sherbet" data-label="アイスクリーム、シャーベット" class="m__form__checkbox_btn searchInputForm">
-                        <label for="ice-sherbet" class="m__form__checkbox_label">アイスクリーム、シャーベット</label>
+                        <input type="checkbox" name="category[]" value="ice-sherbet" id="ice-sherbet" data-label="アイスクリーム、シャーベット" class="m__form__checkbox_btnice searchInputForm">
+                        <label for="ice-sherbet" class="m__form__checkbox_label-ice">アイスクリーム <br> シャーベット</label>
                     </li>
                     <li>
                         <input type="checkbox" name="category[]" value="crepe" id="crepe" data-label="クレープ" class="m__form__checkbox_btn searchInputForm">
@@ -296,7 +296,7 @@
         </article>
         
         <article class="storedeta">
-            <div class="container">
+            {{-- <div class="container">
                 <div class="subject">
                     <div class="search-result">
                         <h2 class="toppage-subject font">検索結果</h2>
@@ -304,7 +304,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="selected font">指定条件</h4>
+            <h4 class="selected font">指定条件</h4> --}}
             @foreach ($stores as $detail)
         <div class="review">
           <div class="content">
