@@ -29,7 +29,6 @@ Route::get('/stores/search', 'StoreController@search')->name('stores.search');
 
 Route::resource('/stores','StoreController');
 Route::resource('/reviews','ReviewController');
-
 Route::get('/sweets', 'StoreController@index')->name('sweets.index');
 
 
