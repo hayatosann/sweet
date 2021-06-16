@@ -76,7 +76,7 @@ class StoreController extends Controller
         if($sum / count($ratings) == 0){
             $rating = 0;
         }else{
-            $rating = round($rating, 1);
+            $rating = round($sum / count($ratings) , 1);
         }
 
         $store -> rating = $rating;
