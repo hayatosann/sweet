@@ -38,10 +38,10 @@ dl {
     line-height: 1.8;
 }
 dl dt {
-    width: 25%;
+    width: 40%;
 }
 dl dd {
-    width: 75%;
+    width: 60%;
 }
 .shop-data-center {
     display: flex;
