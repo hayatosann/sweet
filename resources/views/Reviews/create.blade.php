@@ -1,7 +1,8 @@
 @extends('layouts.header')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('content')
@@ -204,9 +205,7 @@
                                 <button type="submit" class="btn post">口コミを投稿する</button>
                             </div>
                             <div class="text-right">
-                                @if{{$review->published_at < $review->created_at }}
                                 <button type="submit" name="draft" class="btn save-draft">下書きに保存</button>
-                                @endif
                             </div>
                         </div>{{-- action-button --}}
                     </div>{{-- buttons --}}
