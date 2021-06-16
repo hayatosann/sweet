@@ -154,13 +154,17 @@
                 @foreach ($store->reviews as $review)
                 <div class="review-details">
                     <dl class="posted-data">
+                        @if($review->user)
                         <dt class="post-title row">{{$review->user->name}}さんの口コミ</dt>
+                        @else
+                        <dt class="post-title row">退会されたユーザーの口コミ</dt>
+                        @endif
                         <dt class="post-title date">投稿日時：</dt>
                         <dd class="date">{{$review->published_at}}</dd>
                         <dt class="post-title">食べたもの：</dt>
                         <dd>{{$review->ate_thing}}</dd>
                         <dt class="post-title">カテゴリー：</dt>
-                        <dd>{{$review->category_id}}</dd>
+                        <dd>{{$review->category->name}}</dd>
                         <dt class="post-title">支払額：</dt>
                         <dd>{{$review->charge}}円</dd>
                     </dl>
@@ -185,10 +189,10 @@
                         <span class="value">{{$review->comment}}</span>
                     </div>
                 </div>
-                @if ($review->post_image != null)
+                @if ($review->post_image)
                 <img src="{{$review->post_image}}" alt="投稿写真">
                 @else
-                <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+                <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                 @endif
                 @endforeach
             </div>{{-- review-wrapper --}}
