@@ -24,7 +24,7 @@ class Store extends Model
 
     function prefecture()
     {
-        return $this->belongsTo('App\Prefectue');
+        return $this->belongsTo('App\Prefecture');
     }
 
     function bestreview()

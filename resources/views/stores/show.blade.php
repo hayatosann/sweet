@@ -42,9 +42,9 @@
                 <div class="shop-data-center">
                     <dl>
                         <dt>カテゴリー：</dt>
-                        <dd>{{$store->category_id}}</dd>
+                        <dd>{{$store->category->name}}</dd>
                         <dt>エリア：</dt>
-                        <dd>{{$store->prefecture_id}}</dd>
+                        <dd>{{$store->prefecture->name}}</dd>
                         <dt>予算：</dt>
                         <dd>{{$store->price}}円</dd>
                     </dl>
@@ -66,18 +66,18 @@
                 <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        @if($store->store_image !== null)
-                        <img src="{{$store->store_image}}" alt="店頭写真">
-                        @else
+                        @if($store->store_image == null)
                         <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店頭写真">
                         @endif
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        @if($store->store_image !== null)
-                        <img src="{{$store->store_image}}" alt="店内写真">
-                        @else
+                        @if($store->store_image == null)
                         <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店内写真">
                         @endif
                         <p>店舗内</p>
                     </div>
@@ -97,43 +97,43 @@
     <hr>
     <section class="bottom-menu">
         {{-- 看板メニュー --}}
-        <div class="recommend-shops">
+        {{-- <div class="recommend-shops">
             <h3 class="sub-title upper">看板メニュー</h3>
             <div class="recommends">
                 <div class="detail-link">
-                    @if($store->recommend_image !== null)
-                    <img src="{{$store->recommend_image}}" alt="おすすめ商品">
-                    @else
+                    @if($store->recommend_image == null)
                     <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
-                    @endif
-                    <p>{{$store->recommend_product}}</p>
-                </div>
-                <div class="detail-link">
-                    @if($store->recommend_image !== null)
-                    <img src="{{$store->recommend_image}}" alt="おすすめ商品">
                     @else
-                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
-                    @endif
-                    <p>{{$store->recommend_product}}</p>
-                </div>
-                <div class="spacer"></div>
-                <div class="detail-link">
-                    @if($store->recommend_image !== null)
                     <img src="{{$store->recommend_image}}" alt="おすすめ商品">
-                    @else
-                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
-                    @endif
-                    <p>{{$store->recommend_product}}</p>
-                </div>
-                <div class="detail-link">
-                    @if($store->recommend_image !== null)
-                    <img src="{{$store->recommend_image}}" alt="おすすめ商品">
-                    @else
-                    <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
-                    @endif
-                    <p>{{$store->recommend_product}}</p>
-                </div>
-            </div>{{-- recommend_shops --}}
+        @endif
+        <p>{{$store->recommend_product}}</p>
+        </div>
+        <div class="detail-link">
+            @if($store->recommend_image == null)
+            <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+            @else
+            <img src="{{$store->recommend_image}}" alt="おすすめ商品">
+            @endif
+            <p>{{$store->recommend_product}}</p>
+        </div>
+        <div class="spacer"></div>
+        <div class="detail-link">
+            @if($store->recommend_image == null)
+            <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+            @else
+            <img src="{{$store->recommend_image}}" alt="おすすめ商品">
+            @endif
+            <p>{{$store->recommend_product}}</p>
+        </div>
+        <div class="detail-link">
+            @if($store->recommend_image == null)
+            <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+            @else
+            <img src="{{$store->recommend_image}}" alt="おすすめ商品">
+            @endif
+            <p>{{$store->recommend_product}}</p>
+        </div>
+        </div>recommend_shops --}}
         </div>
         {{-- 口コミ一覧 --}}
         <div class="review">

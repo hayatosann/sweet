@@ -32,10 +32,10 @@ dl {
     line-height: 1.8;
 }
 dl dt {
-    width: 25%;
+    width: 40%;
 }
 dl dd {
-    width: 75%;
+    width: 60%;
 }
 .shop-data-center {
     display: flex;
@@ -212,7 +212,7 @@ button {
 /* 投稿写真 */
 .post-img {
     flex-direction: row;
-    margin: 0;
+    margin: 0 5px;
 }
 
 
