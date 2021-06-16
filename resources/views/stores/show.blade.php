@@ -33,11 +33,13 @@
             <div class="shop-review-data">
                 <h2>{{$store->name}}</h2>
                 <div class="average">
+                    @foreach ($store->reviews as $review)
                     <div v-for="star in [5,4,3,2,1]">
                         <input v-model="reviewParams.stars" type="radio" :value="star">
-                        <v-star :value="star"></v-star>
+                        <v-star :value="star">{{$review->review}}</v-star>
                     </div>
-                    <span class="value">{{$store->review}}</span>
+                    <span class="value">{{$review->review}}</span>
+                    @endforeach
                 </div>
                 <div class="shop-data-center">
                     <dl>
@@ -56,7 +58,7 @@
                             @csrf
                             <input type="hidden" name="store_id" value="{{ $store->id }}">
                             <button type="submit" class="btn text-danger">
-                                <img src="../css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo">
+                                <img src="{{ asset('css/rogo_okiniiri.jpg') }}" alt="お気に入り星" class="rogo">
                             </button>
                         </form>
                     </div>
@@ -67,7 +69,7 @@
                 <div class="shop-photos">
                     <div class="shop-detail-link">
                         @if($store->store_image == null)
-                        <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                         @else
                         <img src="{{$store->store_image}}" alt="店頭写真">
                         @endif
@@ -75,7 +77,7 @@
                     </div>
                     <div class="shop-detail-link">
                         @if($store->store_image == null)
-                        <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                         @else
                         <img src="{{$store->store_image}}" alt="店内写真">
                         @endif
@@ -140,7 +142,7 @@
             <div class="posting">
                 <h3>口コミ一覧</h3>
                 <button type="submit" class="btn-text-danger">
-                    <img src="../css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo">
+                    <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
                 </button>
                 <div class="word font">
                     <a href="/reviews/create?store_id={{$store->id}}"></a>
@@ -183,8 +185,8 @@
                         <span class="value">{{$review->comment}}</span>
                     </div>
                 </div>
-                @if ($review->post_image !== null)
-                <img src="{{$review->store->post_image}}" alt="投稿写真">
+                @if ($review->post_image != null)
+                <img src="{{$review->post_image}}" alt="投稿写真">
                 @else
                 <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                 @endif
