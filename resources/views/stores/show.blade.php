@@ -8,7 +8,7 @@
 @section('content')
 <body>
     <section class="upper-menu">
-        <a href="">
+        <a href="#" onclick="window.history.back(); return false;">
             <p class="go_back">一つ前に戻る</p>
         </a>
         <div class="shop">
