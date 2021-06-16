@@ -241,7 +241,6 @@
                 
         </section>
 
-
         <!-- カテゴリー -->
         <section class="side_inner_sec side_inner_sec--border_top sec_rush">
             <h4 class="m__ttl_pinkbrd_left--small">カテゴリーを選択</h4>
@@ -294,7 +293,6 @@
             <!-- /検索条件ボタン -->
         </section>
         <!-- /カテゴリー -->
-
    
 </body>
 </html>
