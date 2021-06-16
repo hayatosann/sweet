@@ -328,3 +328,63 @@ text-align: left;
 .stars{
     display: inline-block;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #707070;
+}
+
+.side_inner_sec {
+    margin: 40px;
+}
+
+li {
+    list-style: none;
+}
+
+.m__ttl_pinkbrd_left--small {
+    padding:10px;
+}
+@media screen and (max-width: 767px){
+.m__box__accordion--sidebar .m__btn--accordion {
+        padding: 20px 10px;
+    }
+}
+/* --アコーディオンメニュー -- */
+.acd-check {
+    display: none;
+}
+.acd-label{
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+}
+.acd-content{
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+/* --検索ボタン-- */
+.search_button {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    padding-left: 30px;
+    padding-top: 50px;
+}
+.btn_kensaku {
+    color:#ffff;
+    width: 1500px;
+    height: 30px;
+    border-radius: 15px;
+    background: #e0b6b7;
+}
