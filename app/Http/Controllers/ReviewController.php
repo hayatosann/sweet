@@ -88,7 +88,10 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = Review::find($id);
+        $store = Store::find($review -> store_id);
+
+        return view('Reviews.edit',['review' => $review, 'store'=>$store]);
     }
 
     /**
@@ -100,7 +103,22 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+
+            $review -> comment = $request -> comment;
+            $review -> user_id = Auth::id();
+            $review -> review = $request -> review;
+            $review -> charge = $request -> charge;
+            $review -> ate_thing = $request -> ate_thing;
+            $review -> category_id = $request -> category_id;
+            // $review -> post_image = $request -> post_image;
+            if($request->is_published){
+                $review -> published_at = now();
+            }
+            $review -> save();
+            $store = Store::find($request -> store_id);
+            
+            return view ('stores.show', ['store'=>$store]);
     }
 
     /**
