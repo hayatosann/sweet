@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>口コミ投稿・編集</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>口コミ投稿・編集</title> --}}
+    @extends('layouts.header')
 
-</head>
+    @section('css')
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    @endsection
 
-<body>
+    @section('content')
+
     <section class="upper-menu">
         <a href="">
             <p class="go_back">一つ前に戻る</p>
@@ -124,12 +127,12 @@
                 <div class="rate">
                     <p>評価(★)</p>
                     <select name="review">
-                        <option value="0" @if($review->rating ==0)selected @endif>☆☆☆☆☆</option>
-                        <option value="1" @if($review->rating ==1)selected @endif>★☆☆☆☆</option>
-                        <option value="2" @if($review->rating ==2)selected @endif>★★☆☆☆</option>
-                        <option value="3" @if($review->rating ==3)selected @endif>★★★☆☆</option>
-                        <option value="4" @if($review->rating ==4)selected @endif>★★★★☆</option>
-                        <option value="5" @if($review->rating ==5)selected @endif>★★★★★</option>
+                        <option value="0" @if($review->review ==0)selected @endif>☆☆☆☆☆</option>
+                        <option value="1" @if($review->review ==1)selected @endif>★☆☆☆☆</option>
+                        <option value="2" @if($review->review ==2)selected @endif>★★☆☆☆</option>
+                        <option value="3" @if($review->review ==3)selected @endif>★★★☆☆</option>
+                        <option value="4" @if($review->review ==4)selected @endif>★★★★☆</option>
+                        <option value="5" @if($review->review ==5)selected @endif>★★★★★</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -146,17 +149,17 @@
                 </div>
                 <div class="form-group">
                     <label class="space">カテゴリ</label>
-                    <select id="sweets" name="categories">
-                        <option value="category_id" selected @if($review->category_id == 1)selected @endif>ケーキ</option>
-                        <option value="category_id" selected @if($review->category_id == 2)selected @endif>タルト、パイ</option>
-                        <option value="category_id" selected @if($review->category_id == 3)selected @endif>プリン</option>
-                        <option value="category_id" selected @if($review->category_id == 4)selected @endif>チョコレート</option>
-                        <option value="category_id" selected @if($review->category_id == 5)selected @endif>シュークリーム</option>
-                        <option value="category_id" selected @if($review->category_id == 6)selected @endif>クッキー</option>
-                        <option value="category_id" selected @if($review->category_id == 7)selected @endif>アイスクリーム、シャーベット</option>
-                        <option value="category_id" selected @if($review->category_id == 8)selected @endif>クレープ</option>
-                        <option value="category_id" selected @if($review->category_id == 9)selected @endif>パフェ</option>
-                        <option value="category_id" selected @if($review->category_id == 10)selected @endif>その他</option>
+                    <select id="sweets" name="category_id">
+                        <option value="1" @if($review->category_id == 1)selected @endif>ケーキ</option>
+                        <option value="2" @if($review->category_id == 2)selected @endif>タルト、パイ</option>
+                        <option value="3" @if($review->category_id == 3)selected @endif>プリン</option>
+                        <option value="4" @if($review->category_id == 4)selected @endif>チョコレート</option>
+                        <option value="5" @if($review->category_id == 5)selected @endif>シュークリーム</option>
+                        <option value="6" @if($review->category_id == 6)selected @endif>クッキー</option>
+                        <option value="7" @if($review->category_id == 7)selected @endif>アイスクリーム、シャーベット</option>
+                        <option value="8" @if($review->category_id == 8)selected @endif>クレープ</option>
+                        <option value="9" @if($review->category_id == 9)selected @endif>パフェ</option>
+                        <option value="10" @if($review->category_id == 10)selected @endif>その他</option>
                     </select>
                 </div>
                 <div class="low">
@@ -199,6 +202,5 @@
             
         </div>{{-- review-form --}}
     </section>{{-- bottom-menu --}}
-</body>
 
-</html>
+    @endsection
