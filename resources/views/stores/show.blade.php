@@ -165,19 +165,19 @@
                     <div class="average">
                         <span class="star">
                             <span>
-                                {{$review->review > 1 ? '★' : '☆' }}
+                                {{$review->review >= 1 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 2 ? '★' : '☆' }}
+                                {{$review->review >= 2 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 3 ? '★' : '☆' }}
+                                {{$review->review >= 3 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 4 ? '★' : '☆' }}
+                                {{$review->review >= 4 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 5 ? '★' : '☆' }}
+                                {{$review->review >= 5 ? '★' : '☆' }}
                             </span>
                         </span>
                         <span class="value">{{$review->comment}}</span>
