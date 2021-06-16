@@ -11050,3 +11050,220 @@ a.text-dark:focus {
 .search_container ::-webkit-input-placeholder {
   color: #707070;
 }
+
+.welcome{
+font-family: "Hiragino Kaku Gothic ProN";
+font-weight: normal;
+font-size: 30px;
+text-align: left;
+color: #707070;
+text-align: center;
+margin-top: 10px;
+}
+
+.login-name{
+font-family: "Hiragino Kaku Gothic ProN";
+font-weight: normal;
+font-size: 50px;
+text-align: left;
+color: #fff;
+text-align: center;
+}
+
+.login-pass-check{
+  margin-top: 20px;
+}
+.loginbutton-box{
+  display: flex;
+}
+.email-label{
+font-family: "Hiragino Kaku Gothic ProN";
+font-weight: normal;
+font-size: 50px;
+text-align: left;
+color: #707070;
+white-space: nowrap;
+}
+
+.email-form{
+width: 698px;
+height: 90px;
+border-radius: 45px;
+background: #fff;
+border: 1px solid #707070;
+}
+
+.pass-label{
+font-family: "Hiragino Kaku Gothic ProN";
+font-weight: normal;
+font-size: 50px;
+text-align: left;
+color: #707070;
+white-space: nowrap;
+}
+
+.pass-form{
+width: 698px;
+height: 90px;
+border-radius: 45px;
+background: #fff;
+border: 1px solid #707070;
+}
+
+.pass-forget{
+font-family: "Hiragino Kaku Gothic ProN";
+font-weight: normal;
+font-size: 25px;
+text-align: right;
+color: #e0b6b7;
+white-space: nowrap;
+margin: 20px;
+}
+
+.pass-forget:hover{
+text-decoration: none;
+}
+
+.login-click{
+display: flex;
+align-items: center;
+}
+
+
+/* 修正 */
+.register-box, .login-box{
+  width: 100%;
+}
+.register-container,.login-container{
+  margin-left: 25%;
+  margin-top: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #707070;
+  border-radius: 35px;
+  background-color: white;
+}
+.card{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  border-radius: 25px;
+  background-color: #e0b6b7;
+}
+
+.card-header{
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+.card-body{
+  margin: 30px;
+}
+
+.register-name{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.name-label{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  color: #707070;
+}
+
+.name-form{
+  width:100%;
+  height: 40px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+.email-label{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  color: #707070;
+  margin-top: 10px;
+}
+
+.email-form{
+  width:100%;
+  height: 40px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+.pass-label{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  color: #707070;
+  margin-top: 10px;
+}
+
+.pass-form{
+  width:100%;
+  height: 40px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+.check-label{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+  color: #707070;
+  margin-top: 10px;
+}
+
+.check-form{
+  width:100%;
+  height: 40px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid #707070;
+}
+
+.register-button,.login-button{
+  width: 180px;
+  height: 50px;
+  border-radius: 40.5px;
+  background: #e0b6b7;
+  border: 1px solid #707070;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  margin: 20px;
+}
+
+.allbackground{
+  background-color: white;
+}
+.password-forget{
+  margin-top: 35px;
+  margin-left: 20px;
+  color: #e0b6b7;
+
+}
+.passform-check{
+  margin-left: 5px;
+}
