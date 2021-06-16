@@ -48,19 +48,19 @@
                 <div class="stars">
                 <span class="star font">
                     <span>
-                        {{$detail->review > 1 ? '★' : '☆' }}
+                        {{$detail->review >= 1 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  > 2 ? '★' : '☆' }}
+                        {{$detail->review  >= 2 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  > 3 ? '★' : '☆' }}
+                        {{$detail->review  >= 3 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  > 4 ? '★' : '☆' }}
+                        {{$detail->review  >= 4 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  > 5 ? '★' : '☆' }}
+                        {{$detail->review  >= 5 ? '★' : '☆' }}
                     </span>
                 </span>
                 <span class="value font">{{$detail->review}}</span>
@@ -71,24 +71,24 @@
             </div> 
             <div class="usercoment font">
                 <div class="userinfo">
-                <p>{{ $detail->bestreview()['name'] }}さんの口コミ</p>
+                <p>{{ $detail->bestreview()['user_id->name'] }}さんの口コミ</p>
                 <p class="add_time">投稿日時：{{ $detail->bestreview()['created_at'] }}</p>
                 </div>
                 <span class="star font">
                     <span>
-                        {{$detail->bestreview()['review'] > 1 ? '★' : '☆' }}
+                        {{$detail->bestreview()['review'] >= 1 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->bestreview()['review'] > 2 ? '★' : '☆' }}
+                        {{$detail->bestreview()['review'] >= 2 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->bestreview()['review'] > 3 ? '★' : '☆' }}
+                        {{$detail->bestreview()['review'] >= 3 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->bestreview()['review'] > 4 ? '★' : '☆' }}
+                        {{$detail->bestreview()['review'] >= 4 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->bestreview()['review'] > 5 ? '★' : '☆' }}
+                        {{$detail->bestreview()['review'] >= 5 ? '★' : '☆' }}
                     </span>
                 </span>
                 <span class="value font">{{$detail->bestreview()['review']}}</span>
