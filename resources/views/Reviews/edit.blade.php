@@ -163,16 +163,16 @@
                     </select>
                 </div>
                 <div class="low">
-                    <div class="form-group picture">
+                    {{-- <div class="form-group picture">
                         <label class="space">写真</label>
                         <label>
-                            <input ref="photo" type="file" class="form-control" value="{{$review ->published_at}}" name="post_image" accept="image/gif,image/jpeg,image/png"
+                            <input ref="photo" type="file" class="form-control" value="{{$review ->post_image}}" name="post_image" accept="image/gif,image/jpeg,image/png"
                                 @change="onFileChange" multiple>
                         </label>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label class="space">投稿日時</label>
-                        <input type="date" name="update_at">
+                        <input type="date" name="updated_at">　　
                     </div>
                     {{-- アクションボタンたち --}}
                     <div class="buttons">
