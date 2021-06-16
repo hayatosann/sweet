@@ -24,9 +24,9 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $id)
+    public function create(Request $request)
     {
-        $store = Store::find($id);
+        $store = Store::find($request->id);
         
         return view('reviews.create',['store'=>$store]);
     }
@@ -54,11 +54,16 @@ class ReviewController extends Controller
         if($request->is_published){
             $review -> published_at = now();
         }
+        $image = $request->file('post_image');
+        // file()で受け取る
+        if($request->file('post_image')->isValid()){
+            $image_name = $image->getClientOriginalName();
+            $review -> post_image = $image->storeAs('public/images', $image_name);
+        }
 
         $review -> save();
 
         return redirect()->route('stores.show');
-
     }
 
     /**
@@ -70,10 +75,8 @@ class ReviewController extends Controller
     public function show($id)
     {
         $review = Review::find($id);
-    
+   
         return view('stores.show', ['review'=>$review]);
-
-
 
     }
 
@@ -118,10 +121,14 @@ class ReviewController extends Controller
 
     public function myreview()
     {
+        // ログインしていないユーザーがマイページにアクセスしたらログインページに飛ぶ
+        if( Auth::id() == null){
+            return redirect('/login');
+        }
+
         // ログインユーザーの投稿
         $reviews = Auth::user()->reviews;
         $userdata = Auth::user();
-
         return view('users.mypage', ['sendreview' => $reviews, 'senduserdata' => $userdata]);
     }
 }

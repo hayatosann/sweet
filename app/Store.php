@@ -26,4 +26,20 @@ class Store extends Model
     {
         return $this->belongsTo('App\Prefectue');
     }
+
+    function bestreview()
+    {
+        return $this->hasMany('App\Review')
+        ->where('published_at', '<', now())
+        ->orderBy('review', 'desc')
+        ->orderBy('created_at', 'desc')
+        ->first();
+    }
+
+        function review_ratings()
+    {
+        return $this->hasMany('App\Review')
+                    ->pluck('review');
+    }
 }
+

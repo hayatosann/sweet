@@ -17,8 +17,22 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
-        $comments = Review::find(1)->reveiws()->where('comment')->first();
-        return view('index',['stores'=>$stores],['comment'=>$comments]);
+
+        foreach($stores as $store) {
+            $ratings = $store->review_ratings();
+
+            if(count($ratings) < 1) continue;
+            
+            $sum = 0;
+            foreach ($ratings as  $id=>$value) {
+                $sum+=$value;
+            }
+            $rating = $sum / count($ratings);
+            $store -> rating = $rating;
+        }
+                return view('index',['stores'=>$stores]);
+
+
     }
 
     /**
@@ -50,8 +64,8 @@ class StoreController extends Controller
      */
     public function show($id)
     {
+
         $store = Store::find($id);
-        
         return view ('stores.show', ['store'=>$store]);
 
     }
@@ -89,4 +103,17 @@ class StoreController extends Controller
     {
         //
     }
+
+
+
+    // フォームから飛んできた値で店の名前と住所の中を検索して店一覧(index)に返すメソッド
+    public function search(Request $request)
+    {
+        $word = $request -> searchword;
+        $results = Store::where('name', 'like', "%$word%") -> orwhere('address', 'like', "%$word%") ->get();
+        return view('index', ['stores'=>$results]);
+    }
+
+
+
 }
