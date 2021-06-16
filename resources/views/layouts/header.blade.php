@@ -13,8 +13,8 @@
     <header class="all-header">
         <div class="left-header">
             <h2 class="app-title">Sweets Guide</h2>
-            <form method="get" action="#" class="search_container">
-                <input type="text" size="25" placeholder="フリーワード検索">
+            <form method="get" action="{{route('stores.search')}}" class="search_container">
+                <input type="text" size="25" name="searchword" placeholder="フリーワード検索" value="">
                 <input type="submit" value="&#xf002">
             </form>
         </div>

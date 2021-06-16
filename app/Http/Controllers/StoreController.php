@@ -110,8 +110,8 @@ class StoreController extends Controller
     public function search(Request $request)
     {
         $word = $request -> searchword;
-        $results = Store::where('name', 'like', "%$word%") -> orwhere('address', 'like', "%$word%") ->get();
-        return view('index', ['stores'=>$results]);
+        $stores = Store::where('name', 'like', "%$word%") -> orwhere('address', 'like', "%$word%") ->get();
+        return view('index', ['stores'=>$stores]);
     }
 
 
