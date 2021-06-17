@@ -116,6 +116,7 @@ class ReviewController extends Controller
                 $review -> published_at = now();
             }
             $review -> save();
+            $store = Store::find($id);
             $store = Store::find($request -> store_id);
             
             return view ('stores.show', ['store'=>$store]);
