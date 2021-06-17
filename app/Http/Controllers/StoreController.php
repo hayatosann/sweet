@@ -27,8 +27,13 @@ class StoreController extends Controller
             foreach ($ratings as  $id=>$value) {
                 $sum+=$value;
             }
-            $rating = $sum / count($ratings);
-            $store -> rating = $rating;
+
+            if($sum == 0){
+                $store -> rating = 0;
+            }else{
+                $store -> rating = round($sum / count($ratings), 1);
+            }
+
         }
                 return view('index',['stores'=>$stores]);
 
@@ -64,10 +69,21 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-
         $store = Store::find($id);
-        return view ('stores.show', ['store'=>$store]);
+        $ratings = $store->review_ratings();
 
+        $sum = 0;
+        foreach ($ratings as  $id=>$value) {
+            $sum+=$value;
+        }
+
+        if($sum == 0){
+            $store -> rating = 0;
+        }else{
+            $store -> rating = round($sum / count($ratings), 1);
+        }
+
+        return view ('stores.show', ['store'=>$store]);
     }
 
     /**
