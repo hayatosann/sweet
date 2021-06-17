@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 @if ($review->post_image)
-                <img src="{{$review->post_image}}" alt="投稿写真">
+                <img src="{{ Storage::url($review->post_image) }}" alt="投稿写真">
                 @else
                 <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                 @endif
