@@ -32,11 +32,24 @@
             <div class="shop-review-data">
                 <h2>{{$store->name}}</h2>
                 <div class="average">
-                    <div v-for="star in [5,4,3,2,1]">
-                        <input v-model="reviewParams.stars" type="radio" :value="star">
-                        <v-star :value="star"></v-star>
-                    </div>
-                    <span class="value">{{$store->review}}</span>
+                    <span class="star font">
+                        <span>
+                            {{$store->rating >= 1 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 2 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 3 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 4 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 5 ? '★' : '☆' }}
+                        </span>
+                    </span>
+                    <span class="value">{{$store->rating}}</span>
                 </div>
                 <div class="shop-data-center">
                     <dl>
@@ -68,7 +81,7 @@
                         @if($store->store_image !== null)
                         <img src="{{$store->store_image}}" alt="店頭写真">
                         @else
-                        <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="./css/noimage.png" alt="NO_IMAGE">
                         @endif
                         <p>店舗外観</p>
                     </div>
@@ -76,7 +89,7 @@
                         @if($store->store_image !== null)
                         <img src="{{$store->store_image}}" alt="店内写真">
                         @else
-                        <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
+                        <img class="post-img" src="./css/noimage.png" alt="NO_IMAGE">
                         @endif
                         <p>店舗内</p>
                     </div>
