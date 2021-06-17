@@ -27,6 +27,19 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
         $store = Store::find($request->id);
+
+        $ratings = $store->review_ratings();
+
+        $sum = 0;
+        foreach ($ratings as  $id=>$value) {
+            $sum+=$value;
+        }
+
+        if($sum == 0){
+            $store -> rating = 0;
+        }else{
+            $store -> rating = round($sum / count($ratings), 1);
+        }
         
         return view('reviews.create',['store'=>$store]);
     }

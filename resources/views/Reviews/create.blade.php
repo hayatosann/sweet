@@ -16,33 +16,49 @@
                 <h3 class="sub-title upper">店舗情報</h3>
                 <dl class="data_a">
                     <dt>住所</dt>
-                    <dd>〇〇県〇〇市〇〇区〇〇３−２−１</dd>
+                    <dd>{{$store->address}}</dd>
                     <dt>営業時間</dt>
-                    <dd>00:00〜00:00</dd>
+                    <dd>{{$store->opening_hour}}</dd>
                     <dt>定休日</dt>
-                    <dd>○曜日</dd>
+                    <dd>{{$store->closing_day}}</dd>
                     <dt>電話番号</dt>
-                    <dd>00-0000-0000</dd>
+                    <dd>{{$store->phone_number}}</dd>
                     <dt>URLリンク</dt>
-                    <dd><a href="https://cake.jp/shops/" target="_blank">
-                            <p>https://cake.jp/shops/</p>
+                    <dd><a href="{{$store->url}}" target="_blank">
+                            <p>{{$store->url}}</p>
                         </a></dd>
                 </dl>
             </div>
             <div class="shop-review-data">
-                <h2>店舗の名前</h2>
+                <h2>{{$store->name}}</h2>
                 <div class="average">
-                    <span class="star">(平均点の値から★を表示)</span>
-                    <span class="value">(review)の値</span>
+                        <span class="star font">
+                            <span>
+                                {{$store->rating >= 1 ? '★' : '☆' }}
+                            </span>
+                            <span>
+                                {{$store->rating  >= 2 ? '★' : '☆' }}
+                            </span>
+                            <span>
+                                {{$store->rating  >= 3 ? '★' : '☆' }}
+                            </span>
+                            <span>
+                                {{$store->rating  >= 4 ? '★' : '☆' }}
+                            </span>
+                            <span>
+                                {{$store->rating  >= 5 ? '★' : '☆' }}
+                            </span>
+                        </span>
+                        <span class="value font">{{$store->rating}}</span>
                 </div>
                 <div class="shop-data-center">
                     <dl>
-                        <dt class="">カテゴリー：</dt>
-                        <dd>カテゴリー</dd>
+                        <dt>カテゴリー：</dt>
+                        <dd>{{$store->category->name}}</dd>
                         <dt>エリア：</dt>
-                        <dd>エリア</dd>
+                        <dd>{{$store->prefecture->name}}</dd>
                         <dt>予算：</dt>
-                        <dd>0000円〜0000円</dd>
+                        <dd>{{$store->price}}円</dd>
                     </dl>
                     <div class="okini">
                         <div class="word font">
@@ -56,11 +72,19 @@
                 <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        <img src="/css/noimage.png" alt="店舗外観">
+                        @if($store->store_image == null)
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店頭写真">
+                        @endif
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        <img src="/css/noimage.png" alt="店舗内">
+                        @if($store->store_image == null)
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店内写真">
+                        @endif
                         <p>店舗内</p>
                     </div>
                 </div>
