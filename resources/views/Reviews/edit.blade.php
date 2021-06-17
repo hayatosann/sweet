@@ -81,11 +81,21 @@
                 <h3 class="sub-title">店舗写真</h3>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
-                        <img src="/css/noimage.png" alt="店舗外観">
+                        {{-- <img src="/css/noimage.png" alt="店舗外観"> --}}
+                        @if($store->store_image == null)
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店頭写真">
+                        @endif
                         <p>店舗外観</p>
                     </div>
                     <div class="shop-detail-link">
-                        <img src="/css/noimage.png" alt="店舗内">
+                        {{-- <img src="/css/noimage.png" alt="店舗内"> --}}
+                        @if($store->store_image == null)
+                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                        @else
+                        <img src="{{$store->store_image}}" alt="店内写真">
+                        @endif
                         <p>店舗内</p>
                     </div>
                 </div>
