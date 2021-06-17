@@ -14,7 +14,7 @@
         </a>
         <div class="shop">
             <div class="shop-data">
-                <h3 class="sub-title">店舗情報</h3>
+                <h4 class="sub-title">店舗情報</h4>
                 <dl class="data_a">
                     <dt>住所</dt>
                     <dd>{{$store->address}}</dd>
@@ -31,9 +31,9 @@
                 </dl>
             </div>
             <div class="shop-review-data">
-                <h2>{{$store->name}}</h2>
+                <h4>{{$store->name}}</h4>
                 <div class="average">
-                    <span class="star font">
+                    <span class="star font spacing">
                         <span>
                             {{$store->rating >= 1 ? '★' : '☆' }}
                         </span>
@@ -50,10 +50,10 @@
                             {{$store->rating  >= 5 ? '★' : '☆' }}
                         </span>
                     </span>
-                    <span class="value">{{$store->rating}}</span>
+                    <span class="value">（{{$store->rating}}）</span>
                 </div>
                 <div class="shop-data-center">
-                    <dl>
+                    <dl class="data_a">
                         <dt>カテゴリー：</dt>
                         <dd>{{$store->category->name}}</dd>
                         <dt>エリア：</dt>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="shop-photo">
-                <h3 class="sub-title">店舗写真</h3>
+                <h4 class="sub-title">店舗写真</h4>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
                         @if($store->store_image == null)
@@ -97,12 +97,12 @@
                 </div>
             </div>
             <div class="shop-map">
-                <h3>地図</h3>
+                <h4>地図</h4>
                 <div class="shop-detail-link">
                     <iframe
                         src="https://maps.google.co.jp/maps?output=embed&q={{$store->latitude}}, {{$store->longitude}}"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="294"
-                        height="220"></iframe>
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="180"
+                        height="120"></iframe>
                 </div>
             </div>
         </div>{{-- .shop --}}
@@ -151,11 +151,11 @@
         {{-- 口コミ一覧 --}}
         <div class="review">
             <div class="posting">
-                <h3>口コミ一覧</h3>
+                <h4>口コミ一覧</h4>
                 {{-- <button type="submit" class="btn-text-danger"> --}}
-                    <a href="/reviews/create?id={{$store->id}}">
-                        <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
-                    </a>
+                <a href="/reviews/create?id={{$store->id}}">
+                    <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
+                </a>
                 {{-- </button> --}}
                 <div class="word font">
                     <p>口コミを投稿する</p>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 @if ($review->post_image)
-                <img src="{{$review->post_image}}" alt="投稿写真">
+                <img src="{{ Storage::url($review->post_image) }}" alt="投稿写真">
                 @else
                 <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                 @endif

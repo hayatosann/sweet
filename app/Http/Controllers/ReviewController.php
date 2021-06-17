@@ -63,20 +63,18 @@ class ReviewController extends Controller
         $review -> ate_thing = $request -> ate_thing;
         $review -> category_id = $request -> category_id;
         $review -> post_image = $request -> post_image;
-        
-        if($request->is_published){
-            $review -> published_at = now();
-        }
+        $review -> published_at = $request -> published_at;
+
         $image = $request->file('post_image');
         // file()で受け取る
-        if($request->file('post_image')->isValid()){
+        if($request->hasFile('post_image')&& $image->isValid()){
             $image_name = $image->getClientOriginalName();
             $review -> post_image = $image->storeAs('public/images', $image_name);
         }
 
         $review -> save();
 
-        return redirect()->route('stores.show');
+        return redirect()->route('stores.show', $request -> store_id);
     }
 
     /**
