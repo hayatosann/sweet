@@ -20,8 +20,8 @@
                         {{$review->store->name}}
                     </h5>
                     {{-- 画像 --}}
-                    @if ($review->store->post_image !== null)
-                    <img src="{{$review->store->post_image}}" alt="投稿写真">
+                    @if ($review->post_image)
+                    <img src="{{ Storage::url($review->post_image) }}" alt="投稿写真">
                     @else
                     <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
                     @endif
