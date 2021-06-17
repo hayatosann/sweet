@@ -91,6 +91,20 @@ class ReviewController extends Controller
         $review = Review::find($id);
         $store = Store::find($review -> store_id);
 
+        $ratings = $store->review_ratings();
+
+        $sum = 0;
+        foreach ($ratings as $id=>$value) {
+            $sum+=$value;
+        }
+
+        if($sum ==0){
+            $store ->rating = 0;
+        }else{
+            $store ->rating = round($sum / count($ratings),1);
+        }
+        
+
         return view('Reviews.edit',['review' => $review, 'store'=>$store]);
     }
 
