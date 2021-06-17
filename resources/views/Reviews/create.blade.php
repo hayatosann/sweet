@@ -6,33 +6,35 @@
 @endsection
 
 @section('content')
+
 <body>
     <section class="upper-menu">
         <a href="#" onclick="window.history.back(); return false;">
             <p class="go_back">一つ前に戻る</p>
         </a>
         <div class="shop">
-            <div class="shop-data">
-                <h3 class="sub-title upper">店舗情報</h3>
-                <dl class="data_a">
-                    <dt>住所</dt>
-                    <dd>{{$store->address}}</dd>
-                    <dt>営業時間</dt>
-                    <dd>{{$store->opening_hour}}</dd>
-                    <dt>定休日</dt>
-                    <dd>{{$store->closing_day}}</dd>
-                    <dt>電話番号</dt>
-                    <dd>{{$store->phone_number}}</dd>
-                    <dt>URLリンク</dt>
-                    <dd><a href="{{$store->url}}" target="_blank">
-                            <p>{{$store->url}}</p>
-                        </a></dd>
-                </dl>
-            </div>
-            <div class="shop-review-data">
-                <h2>{{$store->name}}</h2>
-                <div class="average">
-                        <span class="star font">
+            <div class="shop">
+                <div class="shop-data">
+                    <h4 class="sub-title">店舗情報</h4>
+                    <dl class="data_a">
+                        <dt>住所</dt>
+                        <dd>{{$store->address}}</dd>
+                        <dt>営業時間</dt>
+                        <dd>{{$store->opening_hour}}</dd>
+                        <dt>定休日</dt>
+                        <dd>{{$store->closing_day}}</dd>
+                        <dt>電話番号</dt>
+                        <dd>{{$store->phone_number}}</dd>
+                        <dt>URLリンク</dt>
+                        <dd><a href="{{$store->url}}" target="_blank">
+                                <p>{{$store->url}}</p>
+                            </a></dd>
+                    </dl>
+                </div>
+                <div class="shop-review-data">
+                    <h4>{{$store->name}}</h4>
+                    <div class="average">
+                        <span class="star font spacing">
                             <span>
                                 {{$store->rating >= 1 ? '★' : '☆' }}
                             </span>
@@ -49,54 +51,62 @@
                                 {{$store->rating  >= 5 ? '★' : '☆' }}
                             </span>
                         </span>
-                        <span class="value font">{{$store->rating}}</span>
-                </div>
-                <div class="shop-data-center">
-                    <dl>
-                        <dt>カテゴリー：</dt>
-                        <dd>{{$store->category->name}}</dd>
-                        <dt>エリア：</dt>
-                        <dd>{{$store->prefecture->name}}</dd>
-                        <dt>予算：</dt>
-                        <dd>{{$store->price}}円</dd>
-                    </dl>
-                    <div class="okini">
-                        <div class="word font">
-                            <p>お気に入りに追加</p>
+                        <span class="value">（{{$store->rating}}）</span>
+                    </div>
+                    <div class="shop-data-center">
+                        <dl class="data_a">
+                            <dt>カテゴリー：</dt>
+                            <dd>{{$store->category->name}}</dd>
+                            <dt>エリア：</dt>
+                            <dd>{{$store->prefecture->name}}</dd>
+                            <dt>予算：</dt>
+                            <dd>{{$store->price}}円</dd>
+                        </dl>
+                        <div class="okini">
+                            <div class="word font">
+                                <p>お気に入りに追加</p>
+                            </div>
+                            <form action="{{ route('favorites.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="store_id" value="{{ $store->id }}">
+                                <button type="submit" class="btn text-danger">
+                                    <img src="{{ asset('css/rogo_okiniiri.jpg') }}" alt="お気に入り星" class="rogo">
+                                </button>
+                            </form>
                         </div>
-                        <a href=""><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></a>
                     </div>
                 </div>
-            </div>
-            <div class="shop-photo">
-                <h3 class="sub-title">店舗写真</h3>
-                <div class="shop-photos">
+                <div class="shop-photo">
+                    <h4 class="sub-title">店舗写真</h4>
+                    <div class="shop-photos">
+                        <div class="shop-detail-link">
+                            @if($store->store_image == null)
+                            <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                            @else
+                            <img src="{{$store->store_image}}" alt="店頭写真">
+                            @endif
+                            <p>店舗外観</p>
+                        </div>
+                        <div class="shop-detail-link">
+                            @if($store->store_image == null)
+                            <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                            @else
+                            <img src="{{$store->store_image}}" alt="店内写真">
+                            @endif
+                            <p>店舗内</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-map">
+                    <h4>地図</h4>
                     <div class="shop-detail-link">
-                        @if($store->store_image == null)
-                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
-                        @else
-                        <img src="{{$store->store_image}}" alt="店頭写真">
-                        @endif
-                        <p>店舗外観</p>
-                    </div>
-                    <div class="shop-detail-link">
-                        @if($store->store_image == null)
-                        <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
-                        @else
-                        <img src="{{$store->store_image}}" alt="店内写真">
-                        @endif
-                        <p>店舗内</p>
+                        <iframe
+                            src="https://maps.google.co.jp/maps?output=embed&q={{$store->latitude}}, {{$store->longitude}}"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="180"
+                            height="120"></iframe>
                     </div>
                 </div>
-            </div>
-            <div class="shop-map">
-                <h3 class="sub-title upper2">地図</h3>
-                <div class="shop-detail-link">
-                    <iframe src="https://maps.google.co.jp/maps?output=embed&q=35.670821,139.702726" frameborder="0"
-                        scrolling="no" marginheight="0" marginwidth="0" width="294" height="220"></iframe>
-                </div>
-            </div>
-        </div>
+            </div>{{-- .shop --}}
     </section>
     <hr>
     <section class="bottom-menu">
@@ -229,9 +239,9 @@
                             <div class="text-right">
                                 <button type="submit" class="btn post">口コミを投稿する</button>
                             </div>
-                            <div class="text-right">
+                            {{-- <div class="text-right">
                                 <button type="submit" name="draft" class="btn save-draft">下書きに保存</button>
-                            </div>
+                            </div> --}}
                         </div>{{-- action-button --}}
                     </div>{{-- buttons --}}
                 </div>
