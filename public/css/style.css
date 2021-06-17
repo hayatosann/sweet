@@ -130,10 +130,11 @@ select {
 .review-form {
     display: flex;
     justify-content: center;
+    margin-left: 430px;
 }
 .rate {
     display: flex;
-    margin-left: 720px;
+    margin-left: 445px;
 }
 .star {
     display: flex;
@@ -165,19 +166,29 @@ select {
     width: 100%;
 }
 
-
 button {
     width: 150px;
     height: 30px;
-    border-radius: 15px;
     background: #f0dad8;
+}
+.overwrite {
+    background-color: #e3c1bc;
+    border-radius: 20px;
+}
+
+.delete {
+    background-color: #F0DADB;
+    border-radius: 20px;
+    color: red;
 }
 .spacer {
     width: 100%;
 }
 .btn {
     /* background-color: #f0dadb; */
-    height: 100px;
+    height: 35px;
+    text-align: center;
+
 }
 .post {
     background-color: #e0b687;
