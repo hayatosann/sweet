@@ -312,7 +312,7 @@
           <div class="content">
             <div class="storephoto">
                 @if($detail->store_image == null)
-                <img class="post-img" src="./css/noimage.png" alt="NO_IMAGE">
+                <img class="post-img" src="../css/noimage.png" alt="NO_IMAGE">
                 @else
                 <img src="{{$detail->store_image}}" alt="店舗写真">
                 @endif
@@ -327,7 +327,7 @@
                         <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></button>
                 </form>
                 <a href="/reviews/create?id={{$detail->id}}">
-                       <img src="./css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
+                       <img src="../css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
                 <div class="word font">
                     <p>口コミを投稿する</p>
                 </div>
