@@ -174,11 +174,11 @@
                         <dt class="post-title date">投稿日時：</dt>
                         <dd class="date">{{$review->published_at}}</dd>
                         <dt class="post-title">食べたもの：</dt>
-                        <dd>{{$review->reviews()['ate_thing']}}</dd>
+                        <dd>{{$review->ate_thing}}</dd>
                         <dt class="post-title">カテゴリー：</dt>
                         <dd>{{$review->category->name}}</dd>
                         <dt class="post-title">支払額：</dt>
-                        <dd>{{$review->reviews()['charge']}}円</dd>
+                        <dd>{{$review->charge}}円</dd>
                     </dl>
                     <div class="average">
                         <span class="star">
