@@ -399,8 +399,10 @@
                 </div>
             </div>
             {{-- 口コミがない場合 --}}
-            @else<div class="usercoment font">
-                
+            @else
+            <div class="usercoment font">
+                <p class="bestreview-null-content">※このお店にまだ口コミがありません</p>
+            </div>
             @endif
             
           </div>
