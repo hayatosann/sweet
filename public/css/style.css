@@ -219,6 +219,7 @@ button {
 /* 投稿写真 */
 .post-img {
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 120px;
     align-items: center;
     margin-top: 30%;
@@ -226,6 +227,11 @@ button {
     flex-direction: row;
     margin: 0 5px;
 >>>>>>> 93f6197c9ce5b67bd831e9cf5f2c54e569a26e01
+=======
+    height: 120px;
+    align-items: center;
+    margin-top: 30%;
+>>>>>>> 8de56efbe54f3ac776531d42c4086ce9e27fda4a
 }
 
 
