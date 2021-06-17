@@ -1,14 +1,20 @@
 /* 全体 */
 body {
     color: #707070;
-    width: 1920px;
-    height: 1080px;
 }
 a {
     text-decoration:none;
 }
+
+h3 {
+    line-height: 1.5;
+}
 .sub-title {
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-bottom: 35px;
+}
+h4 {
+    margin-bottom: 10px;
 }
 .upper {
     height: 60px;
@@ -35,7 +41,7 @@ dl dt {
     width: 40%;
 }
 dl dd {
-    width: 60%;
+    width: 51%;
 }
 .shop-data-center {
     display: flex;
@@ -43,33 +49,34 @@ dl dd {
 }
 .data_a {
     margin-left: 20px;
+    line-height: 2.0;
 }
 .shop-data {
-    width: 35%;
+    width: 45%;
 }
 .average {
     display: flex;
+    font-size: 18px;
 }
 /* お気に入りボタン */
 .okini {
-    width: 150px;
+    width: 120px;
 }
 
 /* 店舗写真 */
 .shop-photo {
-    width: 500px;
-    margin-right: 10px;
+    width: 52%;
 }
 .shop-photos {
     display: flex;
     text-align: center;
 }
-.map {
-    width: 294px;
-    height: 220px;
-}
+
 .shop-review-data {
-    width: 35%;
+    width: 52%;
+}
+iframe {
+    margin-top: 23px;
 }
 
 /* 下メニュー */
@@ -103,8 +110,8 @@ dl dd {
     margin-left: 150px;
 }
 img {
-    width: 200px;
-    height: 130px;
+    width: 180px;
+    height: 120px;
     background-color: #707070 ;
     opacity: 0.5;
     margin: 0 10px 0px 20px;
@@ -136,6 +143,9 @@ select {
 .star > p {
     width: 150px;
 }
+.spacing {
+    margin-left: 20px;
+}
 .space{
     float:left;
     width: 150px;
@@ -157,7 +167,7 @@ select {
 
 
 button {
-    width: 200px;
+    width: 150px;
     height: 30px;
     border-radius: 15px;
     background: #f0dad8;
@@ -213,7 +223,7 @@ button {
 /* 投稿写真 */
 .post-img {
     flex-direction: row;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 
@@ -279,6 +289,7 @@ button {
     flex-direction: column;
     width: 1920px;
     height: 300px;
+    margin-left: 100px;
     }
 
 .content {
