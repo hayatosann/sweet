@@ -306,6 +306,7 @@
                 </div>
             </div>
             <h4 class="selected font">指定条件</h4> --}}
+            <h2 class="toppage-subject font">検索結果</h2>
             @foreach ($stores as $detail)
         <div class="review">
           <div class="content">
@@ -354,7 +355,7 @@
                         {{$detail->review  >= 5 ? '★' : '☆' }}
                     </span>
                 </span>
-                <span class="toppage-reviewflex-star">数字{{$detail->review}}</span>
+                <span class="toppage-reviewflex-star">{{$detail->review}}</span>
                 </div>
                 <div class="button">
                     <button class="toppage-show-button"><a href="{{route('stores.show', $detail->id)}}">詳細</a></button>

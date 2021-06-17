@@ -294,10 +294,8 @@ button {
     margin: 30px;
 }
 
-.storephoto {
-    /* width: 200px; */
-    /* height: 150px; */
-
+.storephoto img{
+    margin-top: 30%;
 }
 
 .add {
@@ -327,6 +325,7 @@ text-align: left;
 
 .userinfo {
     display: -webkit-box;
+    margin-bottom: 7px;
 }
 
 .add_time{
@@ -464,4 +463,7 @@ li {
 }
 .m__form__checkbox_label-ice{
     font-size: 14px;
+}
+.info p{
+    margin-bottom: 7px;
 }
