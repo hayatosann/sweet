@@ -192,8 +192,8 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label class="space">投稿日時</label>
-                        <input type="date" name="created_at">
+                        <label class="space">公開日</label>
+                        <input type="date" name="published_at">
                     </div>
                     {{-- アクションボタンたち --}}
                     <div class="buttons">
