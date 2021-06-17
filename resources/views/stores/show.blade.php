@@ -33,13 +33,24 @@
             <div class="shop-review-data">
                 <h2>{{$store->name}}</h2>
                 <div class="average">
-                    @foreach ($store->reviews as $review)
-                    <div v-for="star in [5,4,3,2,1]">
-                        <input v-model="reviewParams.stars" type="radio" :value="star">
-                        <v-star :value="star">{{$review->review}}</v-star>
-                    </div>
-                    <span class="value">{{$review->review}}</span>
-                    @endforeach
+                    <span class="star font">
+                        <span>
+                            {{$store->rating >= 1 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 2 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 3 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 4 ? '★' : '☆' }}
+                        </span>
+                        <span>
+                            {{$store->rating  >= 5 ? '★' : '☆' }}
+                        </span>
+                    </span>
+                    <span class="value">{{$store->rating}}</span>
                 </div>
                 <div class="shop-data-center">
                     <dl>
@@ -141,11 +152,12 @@
         <div class="review">
             <div class="posting">
                 <h3>口コミ一覧</h3>
-                <button type="submit" class="btn-text-danger">
-                    <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
-                </button>
+                {{-- <button type="submit" class="btn-text-danger"> --}}
+                    <a href="/reviews/create?id={{$store->id}}">
+                        <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
+                    </a>
+                {{-- </button> --}}
                 <div class="word font">
-                    <a href="/reviews/create?store_id={{$store->id}}"></a>
                     <p>口コミを投稿する</p>
                 </div>
             </div>

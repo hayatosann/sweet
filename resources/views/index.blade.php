@@ -340,22 +340,24 @@
                 <div class="toppage-store-starsbox">
                 <span class="toppage-store-stars">
                     <span>
-                        {{$detail->review >= 1 ? '★' : '☆' }}
+                        {{$detail->rating >= 1 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 2 ? '★' : '☆' }}
+                        {{$detail->rating  >= 2 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 3 ? '★' : '☆' }}
+                        {{$detail->rating  >= 3 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 4 ? '★' : '☆' }}
+                        {{$detail->rating  >= 4 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 5 ? '★' : '☆' }}
+                        {{$detail->rating  >= 5 ? '★' : '☆' }}
                     </span>
                 </span>
+
                 <span class="toppage-reviewflex-star">{{$detail->review}}</span>
+
                 </div>
                 <div class="button">
                     <button class="toppage-show-button"><a href="{{route('stores.show', $detail->id)}}">詳細</a></button>
