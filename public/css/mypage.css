@@ -19,10 +19,11 @@ header{
 main {
   display: flex;
   justify-content: space-between;
-  margin-left: 20px;
+  margin: 50px;
 }
 .card{
   display: flex;
+  flex-direction: row;
   padding: 10px;
   margin-bottom: 20px;
   border: rgb(148, 148, 148) 1px;
@@ -54,7 +55,7 @@ h5{
 }
 
 .content{
- 
+ margin-top: 15px;
   display: flex;
   height: 150px;
 }
@@ -156,3 +157,4 @@ button:hover {
   margin-top: 15%;
   margin-bottom: 30px;
 }
+/* 追加修正 */

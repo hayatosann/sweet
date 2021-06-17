@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<main>
+
     <article class="mypage">
         <section class="mypage-title">
             <h2>私の以前口コミしたお店</h2>
@@ -110,7 +110,7 @@
         </section>
 
     </article>
-</main>
+
 </body>
 
 </html>
