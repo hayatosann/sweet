@@ -8,16 +8,22 @@
     @yield('css')
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Sweets Guide</title>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
 </head>
 <body>
     <header class="all-header">
         <div class="left-header">
-            <h2 class="app-title">Sweets Guide</h2>
+            <a href="{{route('stores.index')}}">
+                <h2 class="app-title">Sweets Guide</h2>
+            </a>
             <form method="get" action="{{route('stores.search')}}" class="search_container">
                 <input type="text" size="25" name="searchword" placeholder="フリーワード検索" value="">
                 <input type="submit" value="&#xf002">
             </form>
         </div>
+        
         <div class="right-header">
             @guest
                 @if (Route::has('register'))
