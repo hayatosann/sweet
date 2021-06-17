@@ -31,9 +31,9 @@
                 </dl>
             </div>
             <div class="shop-review-data">
-                <h3>{{$store->name}}</h3>
+                <h4>{{$store->name}}</h4>
                 <div class="average">
-                    <span class="star font">
+                    <span class="star font spacing">
                         <span>
                             {{$store->rating >= 1 ? '★' : '☆' }}
                         </span>
@@ -53,7 +53,7 @@
                     <span class="value">（{{$store->rating}}）</span>
                 </div>
                 <div class="shop-data-center">
-                    <dl>
+                    <dl class="data_a">
                         <dt>カテゴリー：</dt>
                         <dd>{{$store->category->name}}</dd>
                         <dt>エリア：</dt>
@@ -101,8 +101,8 @@
                 <div class="shop-detail-link">
                     <iframe
                         src="https://maps.google.co.jp/maps?output=embed&q={{$store->latitude}}, {{$store->longitude}}"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="294"
-                        height="220"></iframe>
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="180"
+                        height="120"></iframe>
                 </div>
             </div>
         </div>{{-- .shop --}}
@@ -151,7 +151,7 @@
         {{-- 口コミ一覧 --}}
         <div class="review">
             <div class="posting">
-                <h3>口コミ一覧</h3>
+                <h4>口コミ一覧</h4>
                 {{-- <button type="submit" class="btn-text-danger"> --}}
                 <a href="/reviews/create?id={{$store->id}}">
                     <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
