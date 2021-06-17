@@ -58,6 +58,7 @@ dl dd {
     display: flex;
     font-size: 18px;
 }
+
 /* お気に入りボタン */
 .okini {
     width: 120px;
@@ -172,9 +173,6 @@ button {
     border-radius: 15px;
     background: #f0dad8;
 }
-.spacer {
-    width: 100%;
-}
 .btn {
     /* background-color: #f0dadb; */
     height: 100px;
@@ -192,13 +190,16 @@ button {
 .review-wrapper {
     display: flex;
     margin: 10px 10px 10px -40px;
+    flex-wrap: wrap;
+    width: 90%;
 }
 .review-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 850px;
     border: 1px solid #707070;
+    margin: 10px 0 0 10px  ;
 }
 .review-words {
     width: 850px;
@@ -211,21 +212,24 @@ button {
     font-size: 12px;
     width: 850px;
 }
-.post-title {
-    width: 100%;
-}
+
 .date {
-    width: 60%;
+    width: 70%;
 }
 .row {
     margin-left: 20px;
+    width: 61%;
+    padding-right: 20px;
+
 }
 /* 投稿写真 */
 .post-img {
     flex-direction: row;
     margin: 0 10px;
 }
-
+.review-img {
+    margin: 10px 0 0 0;
+}
 
 *{
     margin: 0;
@@ -287,7 +291,6 @@ button {
 .review {
     display: flex;
     flex-direction: column;
-    width: 1920px;
     height: 300px;
     margin-left: 100px;
     }

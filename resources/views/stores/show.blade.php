@@ -171,15 +171,16 @@
                         @else
                         <dt class="post-title row">退会されたユーザーの口コミ</dt>
                         @endif
-                        <dt class="post-title date">投稿日時：</dt>
+                        <dt class="post-title">投稿日時：</dt>
                         <dd class="date">{{$review->published_at}}</dd>
                         <dt class="post-title">食べたもの：</dt>
                         <dd>{{$review->ate_thing}}</dd>
                         <dt class="post-title">カテゴリー：</dt>
                         <dd>{{$review->category->name}}</dd>
-                        <dt class="post-title">支払額：</dt>
+                        <dt>支払額：</dt>
                         <dd>{{$review->charge}}円</dd>
                     </dl>
+                    <div class="spacer"></div>
                     <div class="average">
                         <span class="star">
                             <span>
@@ -204,7 +205,7 @@
                 @if ($review->post_image)
                 <img src="{{ Storage::url($review->post_image) }}" alt="投稿写真">
                 @else
-                <img class="post-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
+                <img class="post-img review-img" src="{{ asset('css/noimage.png') }}" alt="NO_IMAGE">
                 @endif
                 @endforeach
             </div>{{-- review-wrapper --}}
