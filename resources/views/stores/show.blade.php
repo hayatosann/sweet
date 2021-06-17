@@ -151,43 +151,43 @@
             </div>
             <div class="review-wrapper">
                 {{-- 投稿した内容を表示 --}}
-                @foreach ($store->$reviews as $review)
+                @foreach ($store as $review)
                 <div class="review-details">
                     <dl class="posted-data">
-                        <dt class="post-title row">{{$review->name}}さんの口コミ</dt>
+                        <dt class="post-title row">{{$review->reviews()['name']}}さんの口コミ</dt>
                         <dt class="post-title date">投稿日時：</dt>
-                        <dd class="date">{{$review->published_at}}</dd>
+                        <dd class="date">{{$review->reviews()['published_at']}}</dd>
                         <dd>カテゴリー</dd>
                         <dt class="post-title">食べたもの：</dt>
-                        <dd>{{$review->ate_thing}}</dd>
+                        <dd>{{$review->reviews()['ate_thing']}}</dd>
                         <dt class="post-title">カテゴリー：</dt>
-                        <dd>{{$review->category_id}}</dd>
+                        <dd>{{$review->reviews()['category_id']}}</dd>
                         <dt class="post-title">支払額：</dt>
-                        <dd>{{$review->charge}}円</dd>
+                        <dd>{{$review->reviews()['charge']}}円</dd>
                     </dl>
                     <div class="average">
                         <span class="star">
                             <span>
-                                {{$review->review > 1 ? '★' : '☆' }}
+                                {{$review->reviews()['review'] >= 1 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 2 ? '★' : '☆' }}
+                                {{$review->reviews()['review'] >= 2 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 3 ? '★' : '☆' }}
+                                {{$review->reviews()['review'] >= 3 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 4 ? '★' : '☆' }}
+                                {{$review->reviews()['review'] >= 4 ? '★' : '☆' }}
                             </span>
                             <span>
-                                {{$review->review > 5 ? '★' : '☆' }}
+                                {{$review->reviews()['review'] >= 5 ? '★' : '☆' }}
                             </span>
                         </span>
-                        <span class="value">{{$review->review}}</span>
+                        <span class="value">{{$review->reviews()['review']}}</span>
                     </div>
                 </div>
-                @if ($review->post_image !== null)
-                <img src="{{$review->post_image}}" alt="投稿写真">
+                @if ($review->reviews()['post_image'] !== null)
+                <img src="{{$review->reviews()['post_image']}}" alt="投稿写真">
                 @else
                 <img class="post-img" src="/css/noimage.png" alt="NO_IMAGE">
                 @endif
