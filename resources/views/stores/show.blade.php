@@ -14,7 +14,7 @@
         </a>
         <div class="shop">
             <div class="shop-data">
-                <h3 class="sub-title">店舗情報</h3>
+                <h4 class="sub-title">店舗情報</h4>
                 <dl class="data_a">
                     <dt>住所</dt>
                     <dd>{{$store->address}}</dd>
@@ -31,7 +31,7 @@
                 </dl>
             </div>
             <div class="shop-review-data">
-                <h2>{{$store->name}}</h2>
+                <h3>{{$store->name}}</h3>
                 <div class="average">
                     <span class="star font">
                         <span>
@@ -50,7 +50,7 @@
                             {{$store->rating  >= 5 ? '★' : '☆' }}
                         </span>
                     </span>
-                    <span class="value">{{$store->rating}}</span>
+                    <span class="value">（{{$store->rating}}）</span>
                 </div>
                 <div class="shop-data-center">
                     <dl>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="shop-photo">
-                <h3 class="sub-title">店舗写真</h3>
+                <h4 class="sub-title">店舗写真</h4>
                 <div class="shop-photos">
                     <div class="shop-detail-link">
                         @if($store->store_image == null)
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="shop-map">
-                <h3>地図</h3>
+                <h4>地図</h4>
                 <div class="shop-detail-link">
                     <iframe
                         src="https://maps.google.co.jp/maps?output=embed&q={{$store->latitude}}, {{$store->longitude}}"
@@ -153,9 +153,9 @@
             <div class="posting">
                 <h3>口コミ一覧</h3>
                 {{-- <button type="submit" class="btn-text-danger"> --}}
-                    <a href="/reviews/create?id={{$store->id}}">
-                        <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
-                    </a>
+                <a href="/reviews/create?id={{$store->id}}">
+                    <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
+                </a>
                 {{-- </button> --}}
                 <div class="word font">
                     <p>口コミを投稿する</p>
