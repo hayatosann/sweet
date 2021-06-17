@@ -188,7 +188,8 @@ button {
 
 }
 .post {
-    background-color: #e0b687;
+    background-color: #E0B6B7;
+    border-radius: 20px;
 }
 
 /* 口コミ一覧 */
