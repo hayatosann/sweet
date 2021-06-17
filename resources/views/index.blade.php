@@ -361,6 +361,7 @@
                     <button class="toppage-show-button"><a href="{{route('stores.show', $detail->id)}}">詳細</a></button>
                     </div>
             </div> 
+            @if ($detail->bestreview() !== null)
             <div class="usercoment font">
                 <div class="userinfo">
                     @if($detail->bestreview()['user'])
@@ -395,6 +396,42 @@
                 <button class="toppage-button"><a href="{{route('stores.show', $detail->id)}}">続きを見る</a></button>
                 </div>
             </div>
+            {{-- 口コミがない場合 --}}
+            @else<div class="usercoment font">
+                <div class="userinfo">
+                    
+                    <p></p>
+                    
+                <p class="add_time"></p>
+                </div>
+                <div class="toppage-reviewflex">
+                    <span class="star font">
+                        <span>
+                            
+                        </span>
+                        <span>
+                            
+                        </span>
+                        <span>
+                            
+                        </span>
+                        <span>
+
+                        </span>
+                        <span>
+                            
+                        </span>
+                    </span>
+                    <span class="toppage-reviewflex-star"></span>
+                </div>
+                <p class="bestreview-null-content">※このお店にまだ口コミがありません</p>
+                <div class="button">
+                {{-- <button class="toppage-button"><a href="{{route('stores.show', $detail->id)}}">続きを見る</a></button> --}}
+                </div>
+            </div>
+            
+            @endif
+            
           </div>
         </div>
         @endforeach

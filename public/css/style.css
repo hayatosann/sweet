@@ -467,3 +467,9 @@ li {
 .info p{
     margin-bottom: 7px;
 }
+.bestreview-null-content{
+    background-color: rgb(218, 216, 216);
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
