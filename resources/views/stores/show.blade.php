@@ -141,11 +141,12 @@
         <div class="review">
             <div class="posting">
                 <h3>口コミ一覧</h3>
-                <button type="submit" class="btn-text-danger">
-                    <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
-                </button>
+                {{-- <button type="submit" class="btn-text-danger"> --}}
+                    <a href="/reviews/create?id={{$store->id}}">
+                        <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo">
+                    </a>
+                {{-- </button> --}}
                 <div class="word font">
-                    <a href="/reviews/create?store_id={{$store->id}}"></a>
                     <p>口コミを投稿する</p>
                 </div>
             </div>

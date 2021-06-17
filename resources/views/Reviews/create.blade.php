@@ -132,11 +132,12 @@
                 </ul>
             </div>
             @endif
-            <form action=" {{route('reviews.create')}} " method="post" enctype='multipart/form-data'>
+            <form action=" {{route('reviews.store')}} " method="post" enctype='multipart/form-data'>
                 @csrf
+                <input type="hidden" name="store_id" value="{{$store->id}}">
                 <div class="rate">
                     <p>評価(★)</p>
-                    <select name="rating">
+                    <select name="review">
                         <option value="0">☆☆☆☆☆</option>
                         <option value="1">★☆☆☆☆</option>
                         <option value="2">★★☆☆☆</option>
@@ -160,25 +161,25 @@
                 </div>
                 <div class="form-group">
                     <label class="space">カテゴリ</label>
-                    <select id="sweets">
-                        <option value="category_id">ケーキ
+                    <select id="sweets" name="category_id">
+                        <option value="1">ケーキ
                         </option>
-                        <option value="category_id">タルト、パイ
+                        <option value="2">タルト、パイ
                         </option>
-                        <option value="category_id">プリン
+                        <option value="3">プリン
                         </option>
-                        <option value="category_id">チョコレート
+                        <option value="4">チョコレート
                         </option>
-                        <option value="category_id">シュークリーム
+                        <option value="5">シュークリーム
                         </option>
-                        <option value="category_id">クッキー
+                        <option value="6">クッキー
                         </option>
-                        <option value="category_id">アイスクリーム、シャーベット</option>
-                        <option value="category_id">クレープ
+                        <option value="7">アイスクリーム、シャーベット</option>
+                        <option value="8">クレープ
                         </option>
-                        <option value="category_id">パフェ
+                        <option value="9">パフェ
                         </option>
-                        <option value="category_id">その他
+                        <option value="10">その他
                         </option>
                     </select>
                 </div>
