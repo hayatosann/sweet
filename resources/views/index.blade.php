@@ -324,10 +324,10 @@
                 <form action="{{ route('favorites.store') }}" method="POST">
                     @csrf
                         <input type="hidden" name="store_id" value="{{ $detail->id }}">             
-                        <button type="submit" class="btn text-danger"><img src="./css/rogo_okiniiri.jpg" alt="お気に入り星" class="rogo"></button>
+                        <button type="submit" class="btn text-danger"><img src="{{ asset('css/rogo_okiniiri.jpg') }}" alt="お気に入り星" class="rogo"></button>
                 </form>
                 <a href="/reviews/create?id={{$detail->id}}">
-                       <img src="../css/rogo_addreview.jpg" alt="口コミ鉛筆" class="rogo"></a>
+                       <img src="{{ asset('css/rogo_addreview.jpg') }}" alt="口コミ鉛筆" class="rogo"></a>
                 <div class="word font">
                     <p>口コミを投稿する</p>
                 </div>
