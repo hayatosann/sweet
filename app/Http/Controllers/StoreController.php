@@ -27,8 +27,13 @@ class StoreController extends Controller
             foreach ($ratings as  $id=>$value) {
                 $sum+=$value;
             }
-            $rating = $sum / count($ratings);
-            $store -> rating = $rating;
+
+            if($sum == 0){
+                $store -> rating = 0;
+            }else{
+                $store -> rating = round($sum / count($ratings), 1);
+            }
+
         }
                 return view('index',['stores'=>$stores]);
 
