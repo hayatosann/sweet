@@ -334,22 +334,22 @@
                 <div class="stars">
                 <span class="star font">
                     <span>
-                        {{$detail->review >= 1 ? '★' : '☆' }}
+                        {{$detail->rating >= 1 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 2 ? '★' : '☆' }}
+                        {{$detail->rating  >= 2 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 3 ? '★' : '☆' }}
+                        {{$detail->rating  >= 3 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 4 ? '★' : '☆' }}
+                        {{$detail->rating  >= 4 ? '★' : '☆' }}
                     </span>
                     <span>
-                        {{$detail->review  >= 5 ? '★' : '☆' }}
+                        {{$detail->rating  >= 5 ? '★' : '☆' }}
                     </span>
                 </span>
-                <span class="value font">{{$detail->review}}</span>
+                <span class="value font">{{$detail->rating}}</span>
                 </div>
                 <div class="button">
                 <button><a href="{{route('stores.show', $detail->id)}}">詳細</a></button>
