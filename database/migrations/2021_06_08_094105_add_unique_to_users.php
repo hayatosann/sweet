@@ -16,8 +16,8 @@ class AddUniqueToUsers extends Migration
         // usersテーブルにdeleted_at(削除日時)とメールアドレスの複合unique制約を追加する
         // deleted_atに値が入っていたらメールアドレスが重複していても新しいアカウント設定ができる
         Schema::table('users', function (Blueprint $table) {
-            $table->unique(['email', 'deleted_at'], 'users_email_deleted_at_unique');
-            $table->unique(['name', 'deleted_at'], 'users_name_deleted_at_unique');
+            $table->unique(['email', 'deleted_at'], 'email_deleted_unique');
+            $table->unique(['name', 'deleted_at'], 'name_deleted_unique');
         });
     }
 
